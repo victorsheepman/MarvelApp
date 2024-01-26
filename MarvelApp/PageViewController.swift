@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
-    var pages: [UIViewController] = []
+    var pages = [UIViewController]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
