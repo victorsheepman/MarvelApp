@@ -9,11 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet private weak var pageViewController: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("hola moto")
-        print("hola initial")
+    
+       buildPage()
+        
+    }
+    
+    private func buildPage() {
+        let nib = UINib(nibName: "PageView", bundle: nil)
+        
+        guard let view = nib.instantiate(withOwner: self, options: nil).first as?
+                                UIView else {fatalError("Unable to convert nib")}
+        pageViewController.addSubview(view)
     }
 
 
