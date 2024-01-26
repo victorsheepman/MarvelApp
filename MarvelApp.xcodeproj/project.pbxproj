@@ -11,6 +11,7 @@
 		8470926F2B63FA4F0017CB60 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */; };
 		847092732B64000D0017CB60 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847092712B64000D0017CB60 /* PageView.swift */; };
 		847092742B64000D0017CB60 /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847092722B64000D0017CB60 /* PageView.xib */; };
+		847092762B6407920017CB60 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847092752B6407920017CB60 /* PageViewController.swift */; };
 		847B4A132B4EE47C005394E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4A122B4EE47C005394E4 /* AppDelegate.swift */; };
 		847B4A152B4EE47C005394E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4A142B4EE47C005394E4 /* SceneDelegate.swift */; };
 		847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4A162B4EE47C005394E4 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		847092712B64000D0017CB60 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		847092722B64000D0017CB60 /* PageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
+		847092752B6407920017CB60 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		847B4A0F2B4EE47C005394E4 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B4A122B4EE47C005394E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B4A142B4EE47C005394E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				847B4A1B2B4EE47D005394E4 /* Assets.xcassets */,
 				847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */,
 				847B4A202B4EE47D005394E4 /* Info.plist */,
+				847092752B6407920017CB60 /* PageViewController.swift */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */,
+				847092762B6407920017CB60 /* PageViewController.swift in Sources */,
 				847092732B64000D0017CB60 /* PageView.swift in Sources */,
 				847B4A132B4EE47C005394E4 /* AppDelegate.swift in Sources */,
 				8470926D2B63F9530017CB60 /* CoordinatorProtocol.swift in Sources */,

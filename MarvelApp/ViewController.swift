@@ -9,22 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet private weak var pageViewController: UIView!
+    var myPageViewController: PageViewController!
     override func viewDidLoad() {
-        super.viewDidLoad()
-    
-       buildPage()
-        
+        super.viewDidLoad()        
+        initializePageViewController()
     }
     
-    private func buildPage() {
+    private func initializePageViewController (){
+        myPageViewController = PageViewController()
+
+        addChild(myPageViewController)
+        view.addSubview(myPageViewController.view)
+        myPageViewController.didMove(toParent: self)
+    }
+    
+    /*private func buildPage() {
         let nib = UINib(nibName: "PageView", bundle: nil)
         
         guard let view = nib.instantiate(withOwner: self, options: nil).first as?
                                 UIView else {fatalError("Unable to convert nib")}
         pageViewController.addSubview(view)
     }
-
+*/
 
 }
 
