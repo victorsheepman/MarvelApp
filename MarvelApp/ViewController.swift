@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     }
     
     private func initializePageViewController (){
-        myPageViewController = PageViewController()
-
+        myPageViewController = PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+      
         addChild(myPageViewController)
         view.addSubview(myPageViewController.view)
         myPageViewController.didMove(toParent: self)

@@ -18,10 +18,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
         self.delegate = self
 
         createPages()
+        configureIndicatorStyle(defaultColor: .gray, activeColor: .black)
         // Establecer la primera página
         setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
+       
+    
     }
 
+    
     
     private func createPages(){
         
@@ -34,6 +38,13 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
         let page3 = UIViewController()
 
         pages = [page1, page2, page3]
+    }
+
+    private func configureIndicatorStyle(defaultColor:UIColor, activeColor:UIColor){
+        let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [PageViewController.self])
+        
+        pageControl.pageIndicatorTintColor = defaultColor
+        pageControl.currentPageIndicatorTintColor = activeColor
     }
 
 }
@@ -64,4 +75,20 @@ extension PageViewController: UIPageViewControllerDataSource {
             return nil
         }
     }
+    
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return pages.count
+    }
+
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        guard let firstViewController = pages.first,
+              let firstViewControllerIndex = pages.firstIndex(of: firstViewController) else {
+            return 0
+        }
+
+        print("Presentation Index:", firstViewControllerIndex)
+        return firstViewControllerIndex
+    }
+
 }
