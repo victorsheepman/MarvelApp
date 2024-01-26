@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8470926D2B63F9530017CB60 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */; };
+		8470926F2B63FA4F0017CB60 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */; };
 		847B4A132B4EE47C005394E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4A122B4EE47C005394E4 /* AppDelegate.swift */; };
 		847B4A152B4EE47C005394E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4A142B4EE47C005394E4 /* SceneDelegate.swift */; };
 		847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B4A162B4EE47C005394E4 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		847B4A0F2B4EE47C005394E4 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847B4A122B4EE47C005394E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847B4A142B4EE47C005394E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */,
+				8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */,
 			);
 			path = Coordinstors;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */,
 				847B4A132B4EE47C005394E4 /* AppDelegate.swift in Sources */,
 				8470926D2B63F9530017CB60 /* CoordinatorProtocol.swift in Sources */,
+				8470926F2B63FA4F0017CB60 /* MainCoordinator.swift in Sources */,
 				847B4A152B4EE47C005394E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
