@@ -18,7 +18,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
         self.delegate = self
 
         createPages()
-        configureIndicatorStyle(defaultColor: .gray, activeColor: .black)
+        configureIndicatorStyle(defaultColor: .gray, activeColor: .white)
         // Establecer la primera página
         setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
        
@@ -31,7 +31,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
         
         
         let page1 = PageView(image: UIImage(named: "imageOne"), backgroundImage: UIImage(named: "bg1"))
-
         let page2 = PageView(image: UIImage(named: "imageTwo"), backgroundImage: UIImage(named: "bg2"))
         
         let page3 = PageView(image: UIImage(named: "imageThree"), backgroundImage: UIImage(named: "bg3"))
@@ -46,6 +45,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
         
         pageControl.pageIndicatorTintColor = defaultColor
         pageControl.currentPageIndicatorTintColor = activeColor
+        
     }
 
 }

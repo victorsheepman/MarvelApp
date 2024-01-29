@@ -89,11 +89,11 @@
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
 				847B4A162B4EE47C005394E4 /* ViewController.swift */,
+				847092752B6407920017CB60 /* PageViewController.swift */,
 				847B4A182B4EE47C005394E4 /* Main.storyboard */,
 				847B4A1B2B4EE47D005394E4 /* Assets.xcassets */,
 				847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */,
 				847B4A202B4EE47D005394E4 /* Info.plist */,
-				847092752B6407920017CB60 /* PageViewController.swift */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";

@@ -22,15 +22,7 @@ class ViewController: UIViewController {
         view.addSubview(myPageViewController.view)
         myPageViewController.didMove(toParent: self)
     }
-    
-    /*private func buildPage() {
-        let nib = UINib(nibName: "PageView", bundle: nil)
-        
-        guard let view = nib.instantiate(withOwner: self, options: nil).first as?
-                                UIView else {fatalError("Unable to convert nib")}
-        pageViewController.addSubview(view)
-    }
-*/
+
 
 }
 
