@@ -30,15 +30,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
     private func createPages(){
         
         
-        let page1 = PageView(image: UIImage(named: "imageOne"))
-        page1.view.backgroundColor = UIColor.red
+        let page1 = PageView(image: UIImage(named: "imageOne"), backgroundImage: UIImage(named: "bg1"))
 
-        let page2 = UIViewController()
-        page2.view.backgroundColor = UIColor.blue
+        let page2 = PageView(image: UIImage(named: "imageTwo"), backgroundImage: UIImage(named: "bg2"))
+        
+        let page3 = PageView(image: UIImage(named: "imageThree"), backgroundImage: UIImage(named: "bg3"))
+        
+        let page4 = PageView(image: UIImage(named: "imageFour"), backgroundImage: UIImage(named: "bg4"))
 
-        let page3 = UIViewController()
-
-        pages = [page1, page2, page3]
+        pages = [page1, page2, page3, page4]
     }
 
     private func configureIndicatorStyle(defaultColor:UIColor, activeColor:UIColor){

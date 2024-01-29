@@ -10,20 +10,33 @@ import UIKit
 class PageView: UIViewController {
     @IBOutlet weak private var imageView: UIImageView!
     
-        var image: UIImage?
+    private var image: UIImage?
+    private var backgroundImage: UIImage?
+    
+    init(image: UIImage?, backgroundImage: UIImage?) {
+        self.image = image
+        self.backgroundImage = backgroundImage
+        super.init(nibName: nil, bundle: nil)
+    }
        
-       init(image: UIImage?) {
-           self.image = image
-           super.init(nibName: nil, bundle: nil)
-       }
-       
-       required init?(coder: NSCoder) {
-           super.init(coder: coder)
-       }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
           super.viewDidLoad()
-          // Configure your imageView with the provided image
           imageView.image = image
+          addBackground()
     }
+    
+    private func addBackground(){
+        if let backgroundImage = backgroundImage {
+            let backgroundImageView = UIImageView(frame: view.bounds)
+            backgroundImageView.contentMode = .scaleAspectFill
+            backgroundImageView.clipsToBounds = true
+            backgroundImageView.image = backgroundImage
+            view.insertSubview(backgroundImageView, at: 0)
+        }
+    }
+       
 }
