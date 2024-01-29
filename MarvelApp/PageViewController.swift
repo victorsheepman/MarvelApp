@@ -29,7 +29,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
     
     private func createPages(){
         
-        let page1 = UIViewController()
+        
+        let page1 = PageView(image: UIImage(named: "imageOne"))
         page1.view.backgroundColor = UIColor.red
 
         let page2 = UIViewController()

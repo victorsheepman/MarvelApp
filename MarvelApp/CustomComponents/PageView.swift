@@ -7,12 +7,23 @@
 
 import UIKit
 
-class PageView: UIView {
+class PageView: UIViewController {
+    @IBOutlet weak private var imageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        // Do any additional setup after loading the view.
-      
+        var image: UIImage?
+       
+       init(image: UIImage?) {
+           self.image = image
+           super.init(nibName: nil, bundle: nil)
+       }
+       
+       required init?(coder: NSCoder) {
+           super.init(coder: coder)
+       }
+    
+    override func viewDidLoad() {
+          super.viewDidLoad()
+          // Configure your imageView with the provided image
+          imageView.image = image
     }
 }
