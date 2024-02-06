@@ -22,13 +22,41 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MRW-Jw-pfp">
                     <rect key="frame" x="0.0" y="59" width="393" height="378"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bienvenidos a esta APP donde..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbc-jQ-DZn">
+                    <rect key="frame" x="92" y="697" width="208" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beK-AE-EYF">
+                    <rect key="frame" x="168" y="722" width="57" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Skip">
+                        <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="skipPage:" destination="-1" eventType="touchUpInside" id="sOh-fX-Vf5"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Marvel APP" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCs-AF-ph6">
+                    <rect key="frame" x="135" y="663" width="123" height="26"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemPurpleColor"/>
             <constraints>
+                <constraint firstItem="jCs-AF-ph6" firstAttribute="centerX" secondItem="MRW-Jw-pfp" secondAttribute="centerX" id="4q3-dB-aa6"/>
+                <constraint firstItem="rbc-jQ-DZn" firstAttribute="top" secondItem="jCs-AF-ph6" secondAttribute="bottom" constant="8" id="Cqp-9d-3Bf"/>
                 <constraint firstItem="MRW-Jw-pfp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GXp-Jv-bxb"/>
+                <constraint firstItem="rbc-jQ-DZn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="92" id="JKY-Xl-ty4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jCs-AF-ph6" secondAttribute="bottom" constant="129" id="fHP-a3-9aT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MRW-Jw-pfp" secondAttribute="bottom" constant="381" id="hL8-RN-RDd"/>
                 <constraint firstItem="MRW-Jw-pfp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="liv-7L-Wg0"/>
+                <constraint firstItem="rbc-jQ-DZn" firstAttribute="centerX" secondItem="jCs-AF-ph6" secondAttribute="centerX" id="vva-ML-r0W"/>
                 <constraint firstItem="MRW-Jw-pfp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zZb-CF-Fs4"/>
             </constraints>
             <point key="canvasLocation" x="29.770992366412212" y="-12.67605633802817"/>
