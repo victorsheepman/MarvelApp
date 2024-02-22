@@ -12,7 +12,7 @@ class PageView: UIViewController {
     
     private var image: UIImage?
     private var backgroundImage: UIImage?
-    private var customCoordinator:CustomCoordinator?
+    private var homeCoordinator:HomeCoordinator?
     
     init(image: UIImage?, backgroundImage: UIImage?) {
         self.image = image
@@ -43,9 +43,10 @@ class PageView: UIViewController {
        
  
     @IBAction func skipPage(_ sender: Any) {
-        customCoordinator = CustomCoordinator(viewController: self)
+        homeCoordinator = HomeCoordinator(viewController: self)
+        homeCoordinator?.start()
         print("hola")
-        customCoordinator?.start()
+        
     }
     
 }
