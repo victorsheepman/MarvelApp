@@ -8,22 +8,46 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    @IBOutlet weak var textField: UITextField! {
+        didSet {
+            guard let image = UIImage(named: "search-filled") else { return }
+            textField.tintColor = UIColor.lightGray
+            textField.setIcon(image)
+         }
+    }
+    private var characters = [Character]()
+    let dataManager = ExternalDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print("esdtoy eaqyu")
+        dataManager.delegate = self
+        dataManager.fetchApi()
+      
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension HomeViewController:ExternalDataProtocol {
+    func getHeroList(list: [Character]) {
+        characters = list
+        print(characters)
     }
-    */
+    
+    
+}
 
+extension UITextField {
+    func setIcon(_ image: UIImage) {
+       let iconView = UIImageView(frame:
+                      CGRect(x: 10, y: 5, width: 20, height: 20))
+       iconView.image = image
+       let iconContainerView: UIView = UIView(frame:
+                      CGRect(x: 20, y: 0, width: 30, height: 30))
+       iconContainerView.addSubview(iconView)
+       leftView = iconContainerView
+       leftViewMode = .always
+    }
 }

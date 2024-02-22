@@ -10,9 +10,11 @@ import UIKit
 class ViewController: UIViewController {
 
     var myPageViewController: PageViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
         initializePageViewController()
+     
     }
     
     private func initializePageViewController (){

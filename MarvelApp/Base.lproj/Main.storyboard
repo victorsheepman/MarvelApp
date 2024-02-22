@@ -26,31 +26,50 @@
         <!--Home View Controller-->
         <scene sceneID="TiW-9X-f1u">
             <objects>
-                <viewController storyboardIdentifier="homeView" id="d2Z-cW-Cgk" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeView" id="d2Z-cW-Cgk" customClass="HomeViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5o8-NG-2MU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hh-g8-M0m">
-                                <rect key="frame" x="175" y="130" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hh-g8-M0m">
+                                <rect key="frame" x="153.66666666666666" y="59" width="102" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search Characters" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XjM-Hw-IAS">
+                                <rect key="frame" x="16" y="99" width="361" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="textColor" red="0.55686277149999996" green="0.51958433709999996" blue="0.53793622409999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lz7-6c-dI1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XjM-Hw-IAS" firstAttribute="top" secondItem="1Hh-g8-M0m" secondAttribute="bottom" constant="16" id="3WR-pQ-giF"/>
+                            <constraint firstItem="XjM-Hw-IAS" firstAttribute="centerX" secondItem="1Hh-g8-M0m" secondAttribute="centerX" constant="-8.1666666666666572" id="4vw-jo-aZa"/>
+                            <constraint firstItem="Lz7-6c-dI1" firstAttribute="trailing" secondItem="XjM-Hw-IAS" secondAttribute="trailing" constant="16" id="NaE-rF-xQr"/>
+                            <constraint firstItem="XjM-Hw-IAS" firstAttribute="leading" secondItem="5o8-NG-2MU" secondAttribute="leadingMargin" id="ZfJ-qB-r5m"/>
+                            <constraint firstItem="Lz7-6c-dI1" firstAttribute="bottom" secondItem="XjM-Hw-IAS" secondAttribute="bottom" constant="685" id="eqy-1d-gqY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="XjM-Hw-IAS" id="xDi-Ov-xq2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6Z-ru-pdZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="-35"/>
+            <point key="canvasLocation" x="971.7557251908396" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
