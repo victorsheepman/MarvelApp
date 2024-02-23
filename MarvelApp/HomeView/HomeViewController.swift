@@ -56,13 +56,19 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: "Item", for: indexPath) as! HomeCollectionViewCell
         
-        item.layer.borderWidth = 1
+        //item.layer.borderWidth = 1
         item.layer.cornerRadius = 23
         
-        
+        item.configure()
         
         item.labelView.text = characters[indexPath.row].name
-        item.backgroundColor = .blue
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor] // Colores del degradado
+            gradientLayer.frame = item.bounds // Establecer el marco del degradado igual al tamaño de la celda
+        
+        item.layer.insertSublayer(gradientLayer, at: 0)
+        item.backgroundColor = .clear
         
       return item
     }
