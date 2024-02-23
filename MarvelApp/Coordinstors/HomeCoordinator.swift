@@ -18,8 +18,8 @@ class HomeCoordinator: CoordinatorProtocol {
     
     
     func start() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
         
+        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
         let homeView = storyBoard.instantiateViewController(withIdentifier: "homeView")
         
         self.viewController?.navigationController?.navigationBar.isHidden  = true

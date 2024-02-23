@@ -16,14 +16,18 @@ class HomeViewController: UIViewController {
             textField.setIcon(image)
          }
     }
+    
+    
     private var characters = [Character]()
     let dataManager = ExternalDataManager()
     
+    @IBOutlet weak var homeCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("esdtoy eaqyu")
         dataManager.delegate = self
         dataManager.fetchApi()
+       
       
     }
     
@@ -33,10 +37,29 @@ class HomeViewController: UIViewController {
 extension HomeViewController:ExternalDataProtocol {
     func getHeroList(list: [Character]) {
         characters = list
+        
+        DispatchQueue.main.async {
+            self.homeCollectionView.reloadData()
+        }
         print(characters)
     }
     
     
+}
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return characters.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "Item", for: indexPath) as! HomeCollectionViewCell
+        
+        item.labelView.text = characters[indexPath.row].name
+        item.backgroundColor = .blue
+        
+      return item
+    }
 }
 
 extension UITextField {

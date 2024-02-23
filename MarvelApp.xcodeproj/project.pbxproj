@@ -22,6 +22,7 @@
 		84B0726C2B87C46B00AE6B4F /* ExternalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0726B2B87C46B00AE6B4F /* ExternalDataManager.swift */; };
 		84B0726E2B87C4EA00AE6B4F /* Constanst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0726D2B87C4EA00AE6B4F /* Constanst.swift */; };
 		84B072712B87C81500AE6B4F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B072702B87C81500AE6B4F /* Character.swift */; };
+		84B072732B87DE1000AE6B4F /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B072722B87DE1000AE6B4F /* HomeCollectionViewCell.swift */; };
 		84FF160F2B728DF40096FD9C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF160E2B728DF40096FD9C /* HomeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		84B0726B2B87C46B00AE6B4F /* ExternalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalDataManager.swift; sourceTree = "<group>"; };
 		84B0726D2B87C4EA00AE6B4F /* Constanst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constanst.swift; sourceTree = "<group>"; };
 		84B072702B87C81500AE6B4F /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		84B072722B87DE1000AE6B4F /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		84FF160E2B728DF40096FD9C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				84B072692B87BF1B00AE6B4F /* HomeViewController.swift */,
+				84B072722B87DE1000AE6B4F /* HomeCollectionViewCell.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				847092762B6407920017CB60 /* PageViewController.swift in Sources */,
 				84B072712B87C81500AE6B4F /* Character.swift in Sources */,
 				847092732B64000D0017CB60 /* PageView.swift in Sources */,
+				84B072732B87DE1000AE6B4F /* HomeCollectionViewCell.swift in Sources */,
 				84B0726C2B87C46B00AE6B4F /* ExternalDataManager.swift in Sources */,
 				847B4A132B4EE47C005394E4 /* AppDelegate.swift in Sources */,
 				84B0726E2B87C4EA00AE6B4F /* Constanst.swift in Sources */,

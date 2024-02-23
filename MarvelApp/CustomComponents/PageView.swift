@@ -8,8 +8,9 @@
 import UIKit
 
 class PageView: UIViewController {
-    @IBOutlet weak private var imageView: UIImageView!
     
+    
+    @IBOutlet weak private var imageView: UIImageView!
     private var image: UIImage?
     private var backgroundImage: UIImage?
     private var homeCoordinator:HomeCoordinator?
@@ -44,9 +45,7 @@ class PageView: UIViewController {
  
     @IBAction func skipPage(_ sender: Any) {
         homeCoordinator = HomeCoordinator(viewController: self)
-        homeCoordinator?.start()
-        print("hola")
-        
+        homeCoordinator?.start()        
     }
     
 }

@@ -16,9 +16,8 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        print("start")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainView = storyboard.instantiateViewController(withIdentifier: "MainView")
         
         navigationController?.pushViewController(mainView, animated:true)

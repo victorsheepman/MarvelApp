@@ -20,8 +20,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
         createPages()
         configureIndicatorStyle(defaultColor: .gray, activeColor: .white)
         setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
-       
-    
     }
 
     
