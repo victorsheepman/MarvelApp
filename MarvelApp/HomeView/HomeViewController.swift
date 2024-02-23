@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         dataManager.delegate = self
         dataManager.fetchApi()
+        homeCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
        
       
     }
@@ -55,11 +56,26 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: "Item", for: indexPath) as! HomeCollectionViewCell
         
+        item.layer.borderWidth = 1
+        item.layer.cornerRadius = 23
+        
+        
+        
         item.labelView.text = characters[indexPath.row].name
         item.backgroundColor = .blue
         
       return item
     }
+}
+
+
+extension HomeViewController:UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            
+        let size = (collectionView.frame.size.width - 10)/2
+        
+           return CGSize(width: size, height: 230)
+       }
 }
 
 extension UITextField {
