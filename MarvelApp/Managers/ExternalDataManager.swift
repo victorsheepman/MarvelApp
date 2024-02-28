@@ -9,7 +9,7 @@ import Foundation
 import CryptoKit
 
 protocol ExternalDataProtocol {
-    func getHeroList(list:[Character])
+    func getHeroList(list:[HomeViewModel])
 }
 
 class ExternalDataManager {
@@ -33,8 +33,8 @@ class ExternalDataManager {
             
             do{
                 let characters = try JSONDecoder().decode(APIResult.self, from:APIData)
-                self.mapper.map(entity: characters.data.results)
-                self.delegate.getHeroList(list: characters.data.results)
+                let result =  self.mapper.map(entity: characters.data.results)
+                self.delegate.getHeroList(list: result)
             }catch {
                 print("Hubo un error")
             }

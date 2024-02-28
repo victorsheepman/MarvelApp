@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     }
     
     
-    private var characters = [Character]()
+    private var characters = [HomeViewModel]()
     let dataManager = ExternalDataManager()
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController:ExternalDataProtocol {
-    func getHeroList(list: [Character]) {
+    func getHeroList(list: [HomeViewModel]) {
         characters = list
         
         DispatchQueue.main.async {
