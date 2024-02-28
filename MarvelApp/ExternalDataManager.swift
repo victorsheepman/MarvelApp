@@ -39,11 +39,12 @@ class ExternalDataManager {
         }.resume()
     }
     
-    func getHash(data: String)->String{
+    private func getHash(data: String)->String{
         let hash = Insecure.MD5.hash(data: data.data(using: .utf8) ?? Data())
         
         return hash.map {
             String(format: "%02hhx", $0)
         }.joined()
     }
+    
 }
