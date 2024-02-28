@@ -59,7 +59,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if let img = characters[indexPath.row].backdropPath {
             AF.request(img).responseImage { response in
                 if let image = response.value {
-                    item.imageView.image = image
+                    item.setBackgroundImage(image: image)
                 }
             }
         }

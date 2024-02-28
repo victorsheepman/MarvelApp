@@ -14,8 +14,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     private var gradientLayer: CAGradientLayer?
     
-    var imageDecode:String?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         configureGradientLayer()
@@ -34,16 +33,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
         gradientLayer?.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer?.frame = bounds
         if let gradientLayer = gradientLayer {
-            layer.insertSublayer(gradientLayer, above: imageView.layer)
+            layer.insertSublayer(gradientLayer, at:0)
         }
         backgroundColor = .clear
     }
     private func configure() {
-        
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        
-        
+              
         layer.cornerRadius = 23
         // Modificar el tamaño del UILabel
         labelView.frame.size = CGSize(width: 200, height: 100)
@@ -62,6 +57,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
         labelView.numberOfLines = 0
         
         bringSubviewToFront(labelView)
+    }
+    
+    func setBackgroundImage(image: UIImage?) {
+            backgroundView = UIImageView(image: image)
+            backgroundView?.contentMode = .scaleAspectFill
+            backgroundView?.clipsToBounds = true
     }
     
 
