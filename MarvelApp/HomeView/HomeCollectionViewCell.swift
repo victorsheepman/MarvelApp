@@ -14,11 +14,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     private var gradientLayer: CAGradientLayer?
     
+    var imageDecode:String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureGradientLayer()
         configure()
-        
+
     }
     
     override func layoutSubviews() {
@@ -56,4 +58,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
         labelView.lineBreakMode = .byWordWrapping
         labelView.numberOfLines = 0
     }
+    
+
 }

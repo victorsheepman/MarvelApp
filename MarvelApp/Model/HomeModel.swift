@@ -9,5 +9,5 @@ import Foundation
 
 struct HomeViewModel {
     let name: String
-    let backdropPath: URL?
+    let backdropPath: String?
 }
