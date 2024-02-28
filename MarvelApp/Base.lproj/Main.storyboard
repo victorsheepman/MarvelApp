@@ -62,15 +62,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="158" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0gx-4E-JTX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="220"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="LgE-7Y-ThK"/>
-                                                        <constraint firstAttribute="width" constant="128" id="ZUQ-cA-h3a"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-nV-yoT">
-                                                    <rect key="frame" x="25" y="155.66666666666666" width="70" height="50.333333333333343"/>
+                                                    <rect key="frame" x="25" y="155.66666666666666" width="133" height="50.333333333333343"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Xrb-FD-oy6"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="hnN-RA-gR1"/>
@@ -82,19 +75,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="0gx-4E-JTX" secondAttribute="bottom" id="7mv-gH-nJD"/>
-                                                <constraint firstAttribute="trailing" secondItem="0gx-4E-JTX" secondAttribute="trailing" id="BOD-Lt-Beh"/>
                                                 <constraint firstItem="g5g-nV-yoT" firstAttribute="leading" secondItem="8Kk-fn-bf2" secondAttribute="leading" constant="25" id="Bp0-Wz-Sne"/>
                                                 <constraint firstAttribute="bottom" secondItem="g5g-nV-yoT" secondAttribute="bottom" constant="14" id="KjW-oT-hQt"/>
                                                 <constraint firstAttribute="trailing" secondItem="g5g-nV-yoT" secondAttribute="trailing" id="h8e-Ga-DDR"/>
-                                                <constraint firstItem="0gx-4E-JTX" firstAttribute="top" secondItem="8Kk-fn-bf2" secondAttribute="top" id="vcW-QB-8fI"/>
-                                                <constraint firstItem="0gx-4E-JTX" firstAttribute="leading" secondItem="8Kk-fn-bf2" secondAttribute="leading" id="x3F-wA-3Gu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                         <size key="customSize" width="158" height="220"/>
                                         <connections>
-                                            <outlet property="imageView" destination="0gx-4E-JTX" id="Ge3-rD-hHc"/>
                                             <outlet property="labelView" destination="g5g-nV-yoT" id="j9t-LB-vxi"/>
                                         </connections>
                                     </collectionViewCell>

@@ -34,7 +34,6 @@ class ExternalDataManager {
             do{
                 let characters = try JSONDecoder().decode(APIResult.self, from:APIData)
                 let result =  self.mapper.map(entity: characters.data.results)
-                print(characters.data.results[0])
                 self.delegate.getHeroList(list: result)
             }catch {
                 print("Hubo un error")
