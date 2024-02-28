@@ -14,6 +14,7 @@ protocol ExternalDataProtocol {
 
 class ExternalDataManager {
     var delegate:ExternalDataProtocol!
+    private let mapper = MapperHomeViewModel()
     
     func fetchApi(){
         let ts = String(Date().timeIntervalSince1970)
@@ -32,6 +33,7 @@ class ExternalDataManager {
             
             do{
                 let characters = try JSONDecoder().decode(APIResult.self, from:APIData)
+                self.mapper.map(entity: characters.data.results)
                 self.delegate.getHeroList(list: characters.data.results)
             }catch {
                 print("Hubo un error")
