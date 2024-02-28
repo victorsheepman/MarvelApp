@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import AlamofireImage
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField! {
@@ -28,8 +29,6 @@ class HomeViewController: UIViewController {
         dataManager.delegate = self
         dataManager.fetchApi()
         homeCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        
-        
     }
     
 }
@@ -56,6 +55,15 @@ extension HomeViewController: UICollectionViewDataSource {
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: "Item", for: indexPath) as! HomeCollectionViewCell
 
         item.labelView.text = characters[indexPath.row].name
+   
+        if let img = characters[indexPath.row].backdropPath {
+            AF.request(img).responseImage { response in
+                if let image = response.value {
+                    item.imageView.image = image
+                }
+            }
+        }
+        
         
         return item
     }

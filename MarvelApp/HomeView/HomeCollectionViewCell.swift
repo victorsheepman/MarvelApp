@@ -34,11 +34,14 @@ class HomeCollectionViewCell: UICollectionViewCell {
         gradientLayer?.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer?.frame = bounds
         if let gradientLayer = gradientLayer {
-            layer.insertSublayer(gradientLayer, at: 0)
+            layer.insertSublayer(gradientLayer, above: imageView.layer)
         }
         backgroundColor = .clear
     }
     private func configure() {
+        
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         
         
         layer.cornerRadius = 23
@@ -57,6 +60,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         labelView.lineBreakMode = .byWordWrapping
         labelView.numberOfLines = 0
+        
+        bringSubviewToFront(labelView)
     }
     
 
