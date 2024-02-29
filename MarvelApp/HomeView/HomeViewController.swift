@@ -24,13 +24,22 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
         dataManager.fetchApi()
         homeCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+        startActivity()
     }
     
+    private func startActivity(){
+        activity.startAnimating()
+    }
+    
+    private func stopActivity(){
+        activity.stopAnimating()
+    }
 }
 
 
@@ -40,6 +49,7 @@ extension HomeViewController:ExternalDataProtocol {
         
         DispatchQueue.main.async {
             self.homeCollectionView.reloadData()
+            self.stopActivity()
         }
     }
     
