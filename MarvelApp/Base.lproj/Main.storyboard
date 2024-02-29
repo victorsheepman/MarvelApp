@@ -12,6 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MainView" id="BYZ-38-t0r" customClass="ViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -20,7 +21,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
         </scene>
@@ -100,6 +100,14 @@
                                     <outlet property="delegate" destination="d2Z-cW-Cgk" id="nlP-kN-bSB"/>
                                 </connections>
                             </collectionView>
+                            <tabBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqB-r3-o5j">
+                                <rect key="frame" x="4" y="777" width="385" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Favoritos" image="star.fill" catalog="system" id="Csm-wz-G3Y"/>
+                                    <tabBarItem title="Personajes" image="person.fill" catalog="system" id="rQ4-LS-IKR"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lz7-6c-dI1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,12 +120,16 @@
                             <constraint firstItem="zAC-U7-LG7" firstAttribute="top" secondItem="XjM-Hw-IAS" secondAttribute="bottom" constant="20" id="eDB-pV-TSl"/>
                             <constraint firstItem="Lz7-6c-dI1" firstAttribute="bottom" secondItem="XjM-Hw-IAS" secondAttribute="bottom" constant="685" id="eqy-1d-gqY"/>
                             <constraint firstItem="zAC-U7-LG7" firstAttribute="leading" secondItem="XjM-Hw-IAS" secondAttribute="leading" id="gih-cu-RnN"/>
+                            <constraint firstItem="rqB-r3-o5j" firstAttribute="top" secondItem="XjM-Hw-IAS" secondAttribute="bottom" constant="644" id="jqI-dG-TV3"/>
                             <constraint firstItem="zAC-U7-LG7" firstAttribute="bottom" secondItem="Lz7-6c-dI1" secondAttribute="bottom" constant="8" id="k7G-R6-b4t"/>
+                            <constraint firstItem="rqB-r3-o5j" firstAttribute="leading" secondItem="Lz7-6c-dI1" secondAttribute="leading" id="l0o-sr-tHC"/>
+                            <constraint firstItem="Lz7-6c-dI1" firstAttribute="trailing" secondItem="rqB-r3-o5j" secondAttribute="trailing" id="qn4-HA-IhB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activity" destination="epk-c1-PxF" id="QqW-GH-Fbb"/>
                         <outlet property="homeCollectionView" destination="zAC-U7-LG7" id="ral-nL-HBK"/>
+                        <outlet property="tabBar" destination="rqB-r3-o5j" id="5Md-fP-eSc"/>
                         <outlet property="textField" destination="XjM-Hw-IAS" id="xDi-Ov-xq2"/>
                     </connections>
                 </viewController>
@@ -127,6 +139,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
