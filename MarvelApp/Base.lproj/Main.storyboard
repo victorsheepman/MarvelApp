@@ -44,6 +44,9 @@
                                 <color key="textColor" red="0.55686277149999996" green="0.51958433709999996" blue="0.53793622409999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="d2Z-cW-Cgk" id="3za-51-LVw"/>
+                                </connections>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zAC-U7-LG7">
                                 <rect key="frame" x="16" y="153" width="361" height="673"/>
