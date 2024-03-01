@@ -10,4 +10,5 @@ import Foundation
 struct HomeViewModel {
     let name: String
     let backdropPath: String?
+    let id: Int
 }

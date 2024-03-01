@@ -71,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				84B0726B2B87C46B00AE6B4F /* ExternalDataManager.swift */,
-				8416BEB92B8FAB94000862D4 /* MapperHomeViewModel.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -81,18 +80,8 @@
 			children = (
 				8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */,
 				8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */,
-				84FF160E2B728DF40096FD9C /* HomeCoordinator.swift */,
 			);
 			path = Coordinstors;
-			sourceTree = "<group>";
-		};
-		847092702B63FFED0017CB60 /* CustomComponents */ = {
-			isa = PBXGroup;
-			children = (
-				847092712B64000D0017CB60 /* PageView.swift */,
-				847092722B64000D0017CB60 /* PageView.xib */,
-			);
-			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 		847B4A062B4EE47C005394E4 = {
@@ -116,15 +105,12 @@
 			children = (
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
+				847B4A162B4EE47C005394E4 /* ViewController.swift */,
+				84D70AC72B925F3A008B7813 /* Home */,
+				84D70AC42B925EB0008B7813 /* PageView */,
 				8494D1602B9115310000CEDF /* Resource */,
 				8416BEB82B8FAB63000862D4 /* Managers */,
-				84B0726F2B87C7FD00AE6B4F /* Model */,
-				84B072682B87BF0B00AE6B4F /* HomeView */,
-				847092702B63FFED0017CB60 /* CustomComponents */,
 				8470926B2B63F91B0017CB60 /* Coordinstors */,
-				847B4A162B4EE47C005394E4 /* ViewController.swift */,
-				847092752B6407920017CB60 /* PageViewController.swift */,
-				847B4A182B4EE47C005394E4 /* Main.storyboard */,
 				847B4A1B2B4EE47D005394E4 /* Assets.xcassets */,
 				847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */,
 				847B4A202B4EE47D005394E4 /* Info.plist */,
@@ -135,19 +121,11 @@
 		8494D1602B9115310000CEDF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8416BEB92B8FAB94000862D4 /* MapperHomeViewModel.swift */,
 				84B0726D2B87C4EA00AE6B4F /* Constanst.swift */,
 				8494D1612B91153D0000CEDF /* Extensions.swift */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		84B072682B87BF0B00AE6B4F /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				84B072692B87BF1B00AE6B4F /* HomeViewController.swift */,
-				84B072722B87DE1000AE6B4F /* HomeCollectionViewCell.swift */,
-			);
-			path = HomeView;
 			sourceTree = "<group>";
 		};
 		84B0726F2B87C7FD00AE6B4F /* Model */ = {
@@ -157,6 +135,68 @@
 				8416BEBB2B8FAC32000862D4 /* HomeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84D70AC42B925EB0008B7813 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				84D70AC62B925F11008B7813 /* View */,
+				84D70AC52B925F05008B7813 /* Controller */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
+		84D70AC52B925F05008B7813 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				847092752B6407920017CB60 /* PageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84D70AC62B925F11008B7813 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				847092712B64000D0017CB60 /* PageView.swift */,
+				847092722B64000D0017CB60 /* PageView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84D70AC72B925F3A008B7813 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84D70ACA2B925FC8008B7813 /* Coordinator */,
+				84D70AC92B925F85008B7813 /* View */,
+				84D70AC82B925F62008B7813 /* Controller */,
+				84B0726F2B87C7FD00AE6B4F /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84D70AC82B925F62008B7813 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84B072722B87DE1000AE6B4F /* HomeCollectionViewCell.swift */,
+				84B072692B87BF1B00AE6B4F /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84D70AC92B925F85008B7813 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				847B4A182B4EE47C005394E4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84D70ACA2B925FC8008B7813 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				84FF160E2B728DF40096FD9C /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
