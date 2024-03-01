@@ -19,14 +19,14 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     
     private var characters = [HomeViewModel]()
     private var filteredCharacter = [HomeViewModel]()
     let dataManager = ExternalDataManager()
     
-    @IBOutlet weak var homeCollectionView: UICollectionView!
     
-    @IBOutlet weak var activity: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
@@ -44,6 +44,8 @@ class HomeViewController: UIViewController {
         activity.isHidden = true
     }
     
+   
+    
 
 }
 
@@ -57,8 +59,6 @@ extension HomeViewController:ExternalDataProtocol {
             self.stopActivity()
         }
     }
-    
-    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
