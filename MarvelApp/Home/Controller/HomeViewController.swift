@@ -44,6 +44,15 @@ class HomeViewController: UIViewController {
         activity.isHidden = true
     }
     
+    
+    private func reloadTableView(){
+        DispatchQueue.main.async {
+            self.activity.stopAnimating()
+            self.activity.isHidden = true
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
    
     
 
@@ -63,10 +72,11 @@ extension HomeViewController:ExternalDataProtocol {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !filteredCharacter.isEmpty  {
+        if let searchText = textField.text, !searchText.isEmpty {
             return filteredCharacter.count
+        } else {
+            return characters.count
         }
-        return characters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -104,12 +114,11 @@ extension HomeViewController:UICollectionViewDelegateFlowLayout {
 extension HomeViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if let value = textField.text {
-            filteredCharacter = characters.filter{ $0.name.contains(value) }
-            DispatchQueue.main.async { [weak self] in
-                // Recarga la colección con los resultados del filtro en el hilo principal
-                self?.homeCollectionView.reloadData()
-                self?.stopActivity()
-            }
+            self.filteredCharacter =  self.characters.filter({ character in
+                self.reloadTableView()
+                return character.name.contains(value)
+            })
+            
         }
     }
 }

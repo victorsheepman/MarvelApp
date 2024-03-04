@@ -19,7 +19,7 @@ class ExternalDataManager {
     func fetchApi(){
         let ts = String(Date().timeIntervalSince1970)
         let hash = getHash(data: "\(ts)\(Constants.Keys.privateKey)\(Constants.Keys.publicKey)")
-        let url = "https://gateway.marvel.com:443/v1/public/characters?ts=\(ts)&apikey=\(Constants.Keys.publicKey)&hash=\(hash)"
+        let url = "https://gateway.marvel.com:443/v1/public/characters?ts=\(ts)&apikey=\(Constants.Keys.publicKey)&hash=\(hash)&limit=100&offset=0"
         
         let session = URLSession(configuration: .default)
         
