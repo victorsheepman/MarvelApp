@@ -47,6 +47,7 @@
 		847B4A1E2B4EE47D005394E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847B4A202B4EE47D005394E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8494D1612B91153D0000CEDF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84AE25EA2B9B4ED800D2320D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84B072692B87BF1B00AE6B4F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84B0726B2B87C46B00AE6B4F /* ExternalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalDataManager.swift; sourceTree = "<group>"; };
 		84B0726D2B87C4EA00AE6B4F /* Constanst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constanst.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 				847B4A1B2B4EE47D005394E4 /* Assets.xcassets */,
 				847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */,
 				847B4A202B4EE47D005394E4 /* Info.plist */,
+				84AE25EA2B9B4ED800D2320D /* README.md */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
