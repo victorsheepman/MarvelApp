@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     private var characters = [HomeViewModel]()
     private var filteredCharacter = [HomeViewModel]()
     let dataManager = ExternalDataManager()
+    private var detailCoordinator: DetailCoordinator?
     
     
     override func viewDidLoad() {
@@ -70,7 +71,7 @@ extension HomeViewController:ExternalDataProtocol {
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let searchText = textField.text, !searchText.isEmpty {
             return filteredCharacter.count
@@ -97,6 +98,11 @@ extension HomeViewController: UICollectionViewDataSource {
         
         
         return item
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        detailCoordinator = DetailCoordinator(viewController: self)
+        detailCoordinator?.start()
     }
 }
 

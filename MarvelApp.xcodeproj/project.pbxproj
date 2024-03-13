@@ -144,10 +144,10 @@
 		847B4A112B4EE47C005394E4 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
-				8424A19C2BA1EB5100EF60AC /* Detail */,
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
 				847B4A162B4EE47C005394E4 /* ViewController.swift */,
+				8424A19C2BA1EB5100EF60AC /* Detail */,
 				84D70AC72B925F3A008B7813 /* Home */,
 				84D70AC42B925EB0008B7813 /* PageView */,
 				8494D1602B9115310000CEDF /* Resource */,
