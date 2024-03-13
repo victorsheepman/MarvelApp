@@ -34,8 +34,11 @@ class HomeViewController: UIViewController {
         dataManager.fetchApi()
         homeCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         startActivity()
+        
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     private func startActivity(){
         activity.startAnimating()
     }

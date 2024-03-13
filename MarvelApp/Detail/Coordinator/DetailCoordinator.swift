@@ -16,21 +16,18 @@ protocol DeteilCoordinatorProtocol {
 
 class DetailCoordinator:DeteilCoordinatorProtocol {
    
- 
-   
-    
     var viewController: UIViewController?
     
     init(viewController: UIViewController? = nil) {
         self.viewController = viewController
     }
    
-    
     func start(id:Int) {
+        
         let detailView = DetailViewController(nibName: "DetailViewController", bundle: nil)
         detailView.heroId = id
-
-        self.viewController?.navigationController?.show(detailView, sender: nil)
+        self.viewController?.navigationController?.navigationBar.isHidden = false
+        self.viewController?.navigationController?.pushViewController(detailView, animated: true)
+        
     }
-    
 }
