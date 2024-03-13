@@ -13,6 +13,7 @@
 		8424A1A22BA1EBB900EF60AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A1A02BA1EBB900EF60AC /* DetailViewController.swift */; };
 		8424A1A32BA1EBB900EF60AC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8424A1A12BA1EBB900EF60AC /* DetailViewController.xib */; };
 		8424A1A72BA1EC3600EF60AC /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */; };
+		8424A1AA2BA1F29200EF60AC /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A1A92BA1F29200EF60AC /* Comics.swift */; };
 		8470926D2B63F9530017CB60 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */; };
 		8470926F2B63FA4F0017CB60 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */; };
 		847092732B64000D0017CB60 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847092712B64000D0017CB60 /* PageView.swift */; };
@@ -39,6 +40,7 @@
 		8424A1A02BA1EBB900EF60AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8424A1A12BA1EBB900EF60AC /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		8424A1A92BA1F29200EF60AC /* Comics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		847092712B64000D0017CB60 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -85,9 +87,10 @@
 		8424A19C2BA1EB5100EF60AC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				8424A1A52BA1EC2400EF60AC /* Coordinator */,
+				8424A1A82BA1F22500EF60AC /* Model */,
 				8424A1A42BA1EBC300EF60AC /* View */,
 				8424A19F2BA1EB7000EF60AC /* Controller */,
+				8424A1A52BA1EC2400EF60AC /* Coordinator */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -114,6 +117,14 @@
 				8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8424A1A82BA1F22500EF60AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8424A1A92BA1F29200EF60AC /* Comics.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8470926B2B63F91B0017CB60 /* Coordinstors */ = {
@@ -322,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */,
+				8424A1AA2BA1F29200EF60AC /* Comics.swift in Sources */,
 				8424A1A22BA1EBB900EF60AC /* DetailViewController.swift in Sources */,
 				84FF160F2B728DF40096FD9C /* HomeCoordinator.swift in Sources */,
 				8424A1A72BA1EC3600EF60AC /* DetailCoordinator.swift in Sources */,

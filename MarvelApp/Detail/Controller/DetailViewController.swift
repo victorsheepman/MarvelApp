@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    var heroId:Int?
    
     override func viewDidLoad() {
         super.viewDidLoad()
