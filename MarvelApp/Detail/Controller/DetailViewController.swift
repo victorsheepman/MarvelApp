@@ -8,10 +8,17 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    // TODO: usar esta variable para asigar el id del heroe y usarlo en el metodo nuevo de ExternalDataManager
     var heroId:Int?
+    private let dataManager = ExternalDataManager()
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let id = heroId {
+          
+            dataManager.getCharacterById(id: id)
+        }
 
         // Do any additional setup after loading the view.
     }

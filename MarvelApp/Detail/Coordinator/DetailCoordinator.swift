@@ -7,8 +7,16 @@
 
 import Foundation
 import UIKit
+protocol DeteilCoordinatorProtocol {
+    var viewController: UIViewController? { get }
+  
+    
+    func start(id: Int)
+}
 
-class DetailCoordinator:CoordinatorProtocol {
+class DetailCoordinator:DeteilCoordinatorProtocol {
+   
+ 
    
     
     var viewController: UIViewController?
@@ -18,9 +26,10 @@ class DetailCoordinator:CoordinatorProtocol {
     }
    
     
-    func start() {
-        let detailView = DetailViewController(nibName: "DetailViewController", bundle: nil) 
-   
+    func start(id:Int) {
+        let detailView = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        detailView.heroId = id
+
         self.viewController?.navigationController?.show(detailView, sender: nil)
     }
     

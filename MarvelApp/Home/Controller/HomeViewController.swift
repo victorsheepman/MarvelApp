@@ -102,7 +102,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         detailCoordinator = DetailCoordinator(viewController: self)
-        detailCoordinator?.start()
+        detailCoordinator?.start(id: self.filteredCharacter[indexPath.row].id)
     }
 }
 

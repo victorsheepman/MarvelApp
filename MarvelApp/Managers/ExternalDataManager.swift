@@ -43,26 +43,27 @@ class ExternalDataManager {
         }.resume()
     }
     
-    func getComicsById(id:Int){
+    func getCharacterById(id:Int){
         let hash = getHash(data: "\(ts)\(Constants.Keys.privateKey)\(Constants.Keys.publicKey)")
-        let url = "https://gateway.marvel.com:443/v1/public/characters/\(id)/comics?ts=\(ts)&apikey=\(Constants.Keys.publicKey)&hash=\(hash)&limit=100&offset=0"
+        let url = "https://gateway.marvel.com:443/v1/public/characters/\(id)?ts=\(ts)&apikey=\(Constants.Keys.publicKey)&hash=\(hash)&format=comic&formatType=comic&limit=30"
         
         session.dataTask(with: URL(string: url)!) { data, _, err in
             
             if let error = err {
-                fatalError(error.localizedDescription)
-               // return
+                print(error.localizedDescription)
+                return
             }
             
             guard let data = data else {return}
             
             do{
-                let comics = try self.decoder.decode(ComicsResponse.self, from: data)
-                print("resulst: \(comics)")
-            }catch {
-                fatalError("Hubo error")
+                let characters = try self.decoder.decode(CharacterDetail.self, from:data)
+                
+                print(characters)
+            }catch let error{
+                print(error)
             }
-        }
+        }.resume()
         
         
         
