@@ -10,6 +10,9 @@
 		8416BEBA2B8FAB94000862D4 /* MapperHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BEB92B8FAB94000862D4 /* MapperHomeViewModel.swift */; };
 		8416BEBC2B8FAC32000862D4 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BEBB2B8FAC32000862D4 /* HomeModel.swift */; };
 		8416BEC92B8FCBD9000862D4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8416BEC82B8FCBD9000862D4 /* AlamofireImage */; };
+		8424A1A22BA1EBB900EF60AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A1A02BA1EBB900EF60AC /* DetailViewController.swift */; };
+		8424A1A32BA1EBB900EF60AC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8424A1A12BA1EBB900EF60AC /* DetailViewController.xib */; };
+		8424A1A72BA1EC3600EF60AC /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */; };
 		8470926D2B63F9530017CB60 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */; };
 		8470926F2B63FA4F0017CB60 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */; };
 		847092732B64000D0017CB60 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847092712B64000D0017CB60 /* PageView.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		8416BEB92B8FAB94000862D4 /* MapperHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperHomeViewModel.swift; sourceTree = "<group>"; };
 		8416BEBB2B8FAC32000862D4 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		8424A1A02BA1EBB900EF60AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8424A1A12BA1EBB900EF60AC /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		8470926C2B63F9530017CB60 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		8470926E2B63FA4F0017CB60 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		847092712B64000D0017CB60 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -76,6 +82,40 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		8424A19C2BA1EB5100EF60AC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8424A1A52BA1EC2400EF60AC /* Coordinator */,
+				8424A1A42BA1EBC300EF60AC /* View */,
+				8424A19F2BA1EB7000EF60AC /* Controller */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		8424A19F2BA1EB7000EF60AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8424A1A02BA1EBB900EF60AC /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8424A1A42BA1EBC300EF60AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8424A1A12BA1EBB900EF60AC /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8424A1A52BA1EC2400EF60AC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		8470926B2B63F91B0017CB60 /* Coordinstors */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +144,7 @@
 		847B4A112B4EE47C005394E4 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				8424A19C2BA1EB5100EF60AC /* Detail */,
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
 				847B4A162B4EE47C005394E4 /* ViewController.swift */,
@@ -267,6 +308,7 @@
 			files = (
 				847B4A1F2B4EE47D005394E4 /* LaunchScreen.storyboard in Resources */,
 				847092742B64000D0017CB60 /* PageView.xib in Resources */,
+				8424A1A32BA1EBB900EF60AC /* DetailViewController.xib in Resources */,
 				847B4A1C2B4EE47D005394E4 /* Assets.xcassets in Resources */,
 				847B4A1A2B4EE47C005394E4 /* Main.storyboard in Resources */,
 			);
@@ -280,7 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */,
+				8424A1A22BA1EBB900EF60AC /* DetailViewController.swift in Sources */,
 				84FF160F2B728DF40096FD9C /* HomeCoordinator.swift in Sources */,
+				8424A1A72BA1EC3600EF60AC /* DetailCoordinator.swift in Sources */,
 				847092762B6407920017CB60 /* PageViewController.swift in Sources */,
 				84B072712B87C81500AE6B4F /* Character.swift in Sources */,
 				847092732B64000D0017CB60 /* PageView.swift in Sources */,
