@@ -13,7 +13,7 @@ protocol ExternalDataProtocol {
 }
 
 protocol GetHeroDetailProtocol {
-    func getHeroDetail(hero: [Result])
+    func getHeroDetail(hero: DetailModel)
 }
 
 class ExternalDataManager {
@@ -22,6 +22,7 @@ class ExternalDataManager {
     var heroDetailDelegate:GetHeroDetailProtocol!
     
     private let mapper = MapperHomeViewModel()
+    private let mapperDetail = MapperDetailModel()
     private let ts = String(Date().timeIntervalSince1970)
     private let session = URLSession(configuration: .default)
     private let decoder = JSONDecoder()
@@ -64,8 +65,9 @@ class ExternalDataManager {
             guard let data = data else {return}
             
             do{
-                let characters = try self.decoder.decode(CharacterDetail.self, from:data)
-                self.heroDetailDelegate.getHeroDetail(hero: characters.data.results)
+                let result = try self.decoder.decode(CharacterDetail.self, from:data)
+                let characterDetail = self.mapperDetail.mapToDetail(entity: result.data.results)
+                self.heroDetailDelegate.getHeroDetail(hero: characterDetail)
             }catch let error{
                 print(error)
             }

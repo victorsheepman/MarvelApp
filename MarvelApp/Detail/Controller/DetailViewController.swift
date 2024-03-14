@@ -63,11 +63,11 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController:GetHeroDetailProtocol {
-    func getHeroDetail(hero: [Result]) {
-        print(hero)
+    func getHeroDetail(hero: DetailModel) {
+        
         
         DispatchQueue.main.async {
-            self.nameLabel.text = hero[0].name
+            self.nameLabel.text = hero.name
             self.stopActivity()
         }
     }
