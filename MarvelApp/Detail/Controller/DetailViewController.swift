@@ -11,6 +11,7 @@ import AlamofireImage
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,8 +29,14 @@ class DetailViewController: UIViewController {
             dataManager.getCharacterById(id: id, viewController: self)
         }
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        //.isScrollEnabled = false
         startActivity()
         nameLabel.text = ""
+        nameLabel.frame.size = CGSize(width: 200, height: 100)
+        
+        // Modificar la posición del UILabel
+        nameLabel.lineBreakMode = .byWordWrapping
+        nameLabel.numberOfLines = 0
     }
     
     
@@ -90,6 +97,12 @@ extension DetailViewController:GetHeroDetailProtocol {
             }
             self.data = [comics, series, events, stories]
             self.nameLabel.text = hero.name
+            if !hero.description.isEmpty {
+                self.descriptionLabel.text = hero.description
+            }else{
+                self.descriptionLabel.text = "No description" 
+            }
+           
             self.stopActivity()
             self.tableView.reloadData()
         }
