@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     var heroId:Int?
     private let dataManager = ExternalDataManager()
     
-    private var comics = [[String]]()
+    private var data = [[String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +44,15 @@ class DetailViewController: UIViewController {
         activity.isHidden = true
         configureImageView()
     }
+    
     private func configureImageView(){
         
-        //imageView.image = UIImage(named: "bg4")
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.layer.insertSublayer(createGradientImage(image: imageView), at: 0)
         imageView.backgroundColor = .clear
     }
+    
     private func createGradientImage(image:UIImageView) -> CAGradientLayer{
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = image.bounds
@@ -87,7 +88,7 @@ extension DetailViewController:GetHeroDetailProtocol {
                     }
                 }
             }
-            self.comics = [comics, series, events, stories]
+            self.data = [comics, series, events, stories]
             self.nameLabel.text = hero.name
             self.stopActivity()
             self.tableView.reloadData()
@@ -111,13 +112,16 @@ extension DetailViewController {
 
 
 extension DetailViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        data.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comics[section].count
+        data[section].count
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let model = comics[indexPath.section][indexPath.row]
+        let model = data[indexPath.section][indexPath.row]
         
         var listContent = UIListContentConfiguration.cell()
         listContent.text = model
@@ -125,7 +129,19 @@ extension DetailViewController: UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Comics"
+        
+        switch section {
+        case 0:
+            return "Comics"
+        case 1:
+            return "Series"
+        case 2:
+            return "Events"
+        case 3:
+            return "Stories"
+        default:
+            return "null"
+        }
     }
     
 }
