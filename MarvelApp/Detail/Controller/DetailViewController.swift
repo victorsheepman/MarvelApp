@@ -11,6 +11,7 @@ import AlamofireImage
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var activity: UIActivityIndicatorView!
@@ -18,16 +19,19 @@ class DetailViewController: UIViewController {
     var heroId:Int?
     private let dataManager = ExternalDataManager()
     
+    private var comics = [[String]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataManager.heroDetailDelegate = self
         if let id = heroId {
             dataManager.getCharacterById(id: id, viewController: self)
         }
-        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         startActivity()
         nameLabel.text = ""
     }
+    
     
     
     
@@ -63,12 +67,17 @@ class DetailViewController: UIViewController {
     
     
     
+    
+    
 }
 
 extension DetailViewController:GetHeroDetailProtocol {
     func getHeroDetail(hero: DetailModel) {
        
-        
+        let comics  = hero.comics.map {  return $0.name }
+        let series  = hero.series.map {  return $0.name }
+        let events  = hero.events.map {  return $0.name }
+        let stories = hero.stories.map{  return $0.name }
         
         DispatchQueue.main.async {
             if let img = hero.backdropPath {
@@ -78,8 +87,10 @@ extension DetailViewController:GetHeroDetailProtocol {
                     }
                 }
             }
+            self.comics = [comics, series, events, stories]
             self.nameLabel.text = hero.name
             self.stopActivity()
+            self.tableView.reloadData()
         }
     }
 }
@@ -96,4 +107,25 @@ extension DetailViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+}
+
+
+extension DetailViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comics[section].count
+    }
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let model = comics[indexPath.section][indexPath.row]
+        
+        var listContent = UIListContentConfiguration.cell()
+        listContent.text = model
+        cell.contentConfiguration = listContent
+        return cell
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Comics"
+    }
+    
 }
