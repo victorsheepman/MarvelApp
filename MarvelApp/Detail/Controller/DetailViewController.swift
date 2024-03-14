@@ -9,6 +9,13 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
+
+struct CellData{
+    var opened = Bool()
+    var title = String()
+    var sectionData = [String]()
+}
+
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -19,8 +26,8 @@ class DetailViewController: UIViewController {
     
     var heroId:Int?
     private let dataManager = ExternalDataManager()
-    
     private var data = [[String]]()
+    var tableViewData = [CellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +35,17 @@ class DetailViewController: UIViewController {
         if let id = heroId {
             dataManager.getCharacterById(id: id, viewController: self)
         }
+
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        //.isScrollEnabled = false
+        configureLabel()
         startActivity()
+       
+    }
+    
+    private func configureLabel(){
         nameLabel.text = ""
         nameLabel.frame.size = CGSize(width: 200, height: 100)
         
-        // Modificar la posición del UILabel
         nameLabel.lineBreakMode = .byWordWrapping
         nameLabel.numberOfLines = 0
     }
@@ -82,11 +93,28 @@ class DetailViewController: UIViewController {
 extension DetailViewController:GetHeroDetailProtocol {
     func getHeroDetail(hero: DetailModel) {
        
-        let comics  = hero.comics.map {  return $0.name }
-        let series  = hero.series.map {  return $0.name }
-        let events  = hero.events.map {  return $0.name }
-        let stories = hero.stories.map{  return $0.name }
-        
+        var categoryData: [String: [String]] = [:]
+
+        if !hero.comics.isEmpty {
+            let comicsNames = hero.comics.map { $0.name }
+            categoryData["Comics"] = comicsNames
+        }
+
+        if !hero.series.isEmpty {
+            let seriesNames = hero.series.map { $0.name }
+            categoryData["Series"] = seriesNames
+        }
+
+        if !hero.events.isEmpty {
+            let eventsNames = hero.events.map { $0.name }
+            categoryData["Events"] = eventsNames
+        }
+
+        if !hero.stories.isEmpty {
+            let storiesNames = hero.stories.map { $0.name }
+            categoryData["Stories"] = storiesNames
+        }
+
         DispatchQueue.main.async {
             if let img = hero.backdropPath {
                 AF.request(img).responseImage { response in
@@ -95,7 +123,11 @@ extension DetailViewController:GetHeroDetailProtocol {
                     }
                 }
             }
-            self.data = [comics, series, events, stories]
+            //self.data = [comics, series, events, stories]
+            for (category, data) in categoryData {
+                let cellData = CellData(opened: false, title: category, sectionData: data)
+                self.tableViewData.append(cellData)
+            }
             self.nameLabel.text = hero.name
             if !hero.description.isEmpty {
                 self.descriptionLabel.text = hero.description
@@ -126,22 +158,49 @@ extension DetailViewController {
 
 extension DetailViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        data.count
+        tableViewData.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data[section].count
+        if tableViewData[section].opened == true {
+            return tableViewData[section].sectionData.count
+        }else {
+            return 1
+        }
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        var listContent = UIListContentConfiguration.cell()
+        if indexPath.row == 0 {
+            guard let cell =  tableView.dequeueReusableCell(withIdentifier: "Cell") else {return UITableViewCell()}
+            
+            listContent.text = tableViewData[indexPath.section].title
+            listContent.textProperties.color = .gray
+            listContent.textProperties.font =  UIFont.boldSystemFont(ofSize: 17)
+            cell.contentConfiguration = listContent
+            
+            return cell
+        }else{
+            guard let cell =  tableView.dequeueReusableCell(withIdentifier: "Cell") else {return UITableViewCell()}
+           
+            listContent.text = tableViewData[indexPath.section].sectionData[indexPath.row]
+            cell.contentConfiguration = listContent
+            
+            return cell
+        }
+        
+        
+        
+        
+        /*let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let model = data[indexPath.section][indexPath.row]
         
         var listContent = UIListContentConfiguration.cell()
         listContent.text = model
         cell.contentConfiguration = listContent
-        return cell
+        return cell*/
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section {
         case 0:
@@ -155,6 +214,22 @@ extension DetailViewController: UITableViewDataSource{
         default:
             return "null"
         }
+    }*/
+}
+
+extension DetailViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableViewData[indexPath.section].opened == true {
+            tableViewData[indexPath.section].opened = false
+            
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        }else{
+            
+            tableViewData[indexPath.section].opened = true
+            
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        }
     }
-    
 }
