@@ -26,8 +26,8 @@ class DetailViewController: UIViewController {
     
     var heroId:Int?
     private let dataManager = ExternalDataManager()
-    private var data = [[String]]()
     var tableViewData = [CellData]()
+    var mapper = MapperDetailModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,53 +82,31 @@ class DetailViewController: UIViewController {
         return gradientLayer
     }
     
+   
     
+    private func decodeImage(backdropPath:String?){
+        if let img = backdropPath {
+            AF.request(img).responseImage { response in
+                if let image = response.value {
+                    self.imageView.image = image
+                }
+            }
+        }
+    }
     
-    
-    
-    
-    
+
+
 }
 
 extension DetailViewController:GetHeroDetailProtocol {
     func getHeroDetail(hero: DetailModel) {
        
-        var categoryData: [String: [String]] = [:]
-
-        if !hero.comics.isEmpty {
-            let comicsNames = hero.comics.map { $0.name }
-            categoryData["Comics"] = comicsNames
-        }
-
-        if !hero.series.isEmpty {
-            let seriesNames = hero.series.map { $0.name }
-            categoryData["Series"] = seriesNames
-        }
-
-        if !hero.events.isEmpty {
-            let eventsNames = hero.events.map { $0.name }
-            categoryData["Events"] = eventsNames
-        }
-
-        if !hero.stories.isEmpty {
-            let storiesNames = hero.stories.map { $0.name }
-            categoryData["Stories"] = storiesNames
-        }
-
         DispatchQueue.main.async {
-            if let img = hero.backdropPath {
-                AF.request(img).responseImage { response in
-                    if let image = response.value {
-                        self.imageView.image = image
-                    }
-                }
-            }
-            //self.data = [comics, series, events, stories]
-            for (category, data) in categoryData {
-                let cellData = CellData(opened: false, title: category, sectionData: data)
-                self.tableViewData.append(cellData)
-            }
+            
+            self.decodeImage(backdropPath: hero.backdropPath)
+            self.tableViewData = self.mapper.mapToTableViewData(hero: hero)
             self.nameLabel.text = hero.name
+            
             if !hero.description.isEmpty {
                 self.descriptionLabel.text = hero.description
             }else{
@@ -188,33 +166,7 @@ extension DetailViewController: UITableViewDataSource{
             
             return cell
         }
-        
-        
-        
-        
-        /*let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let model = data[indexPath.section][indexPath.row]
-        
-        var listContent = UIListContentConfiguration.cell()
-        listContent.text = model
-        cell.contentConfiguration = listContent
-        return cell*/
     }
-    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        switch section {
-        case 0:
-            return "Comics"
-        case 1:
-            return "Series"
-        case 2:
-            return "Events"
-        case 3:
-            return "Stories"
-        default:
-            return "null"
-        }
-    }*/
 }
 
 extension DetailViewController:UITableViewDelegate{
