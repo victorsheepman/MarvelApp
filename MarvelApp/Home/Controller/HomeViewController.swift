@@ -125,7 +125,7 @@ extension HomeViewController: UITextFieldDelegate {
         if let value = textField.text {
             self.filteredCharacter =  self.characters.filter({ character in
                 self.reloadTableView()
-                return character.name.contains(value)
+                return character.name.lowercased().contains(value.lowercased())
             })
             
         }
