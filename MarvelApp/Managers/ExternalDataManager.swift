@@ -43,6 +43,7 @@ class ExternalDataManager {
             
             do{
                 let characters = try self.decoder.decode(APIResult.self, from:APIData)
+                
                 let result =  self.mapper.map(entity: characters.data.results)
                 self.delegate.getHeroList(list: result)
             }catch {
@@ -66,6 +67,7 @@ class ExternalDataManager {
             
             do{
                 let result = try self.decoder.decode(CharacterDetail.self, from:data)
+                
                 let characterDetail = self.mapperDetail.mapToDetail(entity: result.data.results)
                 self.heroDetailDelegate.getHeroDetail(hero: characterDetail)
             }catch let error{

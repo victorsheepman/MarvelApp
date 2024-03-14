@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class DetailViewController: UIViewController {
     
@@ -42,6 +44,7 @@ class DetailViewController: UIViewController {
         
         //imageView.image = UIImage(named: "bg4")
         imageView.contentMode = .scaleToFill
+        imageView.clipsToBounds = true
         imageView.layer.insertSublayer(createGradientImage(image: imageView), at: 0)
         imageView.backgroundColor = .clear
     }
@@ -64,9 +67,17 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController:GetHeroDetailProtocol {
     func getHeroDetail(hero: DetailModel) {
+       
         
         
         DispatchQueue.main.async {
+            if let img = hero.backdropPath {
+                AF.request(img).responseImage { response in
+                    if let image = response.value {
+                        self.imageView.image = image
+                    }
+                }
+            }
             self.nameLabel.text = hero.name
             self.stopActivity()
         }
