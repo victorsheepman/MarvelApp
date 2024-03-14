@@ -169,6 +169,8 @@ extension DetailViewController: UITableViewDataSource{
     }
 }
 
+// TODO: arreglar error de las celdas
+
 extension DetailViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableViewData[indexPath.section].opened == true {

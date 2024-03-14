@@ -33,22 +33,30 @@ struct MapperDetailModel {
         if !hero.comics.isEmpty {
             let comicsNames = hero.comics.map { $0.name }
             categoryData["Comics"] = comicsNames
-        }
+        }else{
+            categoryData["Comics"] = ["No Comics"]
+         }
 
         if !hero.series.isEmpty {
             let seriesNames = hero.series.map { $0.name }
             categoryData["Series"] = seriesNames
-        }
+        }else{
+            categoryData["Series"] = ["No Series"]
+         }
 
         if !hero.events.isEmpty {
             let eventsNames = hero.events.map { $0.name }
             categoryData["Events"] = eventsNames
-        }
+        }else{
+            categoryData["Events"] = ["No Events"]
+         }
 
         if !hero.stories.isEmpty {
             let storiesNames = hero.stories.map { $0.name }
             categoryData["Stories"] = storiesNames
-        }
+        }else{
+            categoryData["Stories"] = ["No Stories"]
+         }
 
         return categoryData
     }
