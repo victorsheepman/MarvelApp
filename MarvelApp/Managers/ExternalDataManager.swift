@@ -7,6 +7,7 @@
 
 import Foundation
 import CryptoKit
+import UIKit
 
 protocol ExternalDataProtocol {
     func getHeroList(list:[HomeViewModel])
@@ -52,7 +53,7 @@ class ExternalDataManager {
         }.resume()
     }
     
-    func getCharacterById(id:Int){
+    func getCharacterById(id:Int, viewController: DetailViewController){
         let hash = getHash(data: "\(ts)\(Constants.Keys.privateKey)\(Constants.Keys.publicKey)")
         let url = "https://gateway.marvel.com:443/v1/public/characters/\(id)?ts=\(ts)&apikey=\(Constants.Keys.publicKey)&hash=\(hash)&format=comic&formatType=comic&limit=30"
         
@@ -71,7 +72,11 @@ class ExternalDataManager {
                 let characterDetail = self.mapperDetail.mapToDetail(entity: result.data.results)
                 self.heroDetailDelegate.getHeroDetail(hero: characterDetail)
             }catch let error{
-                print(error)
+                print("call error\(error)")
+                DispatchQueue.main.async {
+                    viewController.showAlert(title: "Error", message: "Hubo un error en la llamada")
+
+                }
             }
         }.resume()
         

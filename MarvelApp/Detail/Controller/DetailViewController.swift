@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.dataManager.heroDetailDelegate = self
         if let id = heroId {
-            dataManager.getCharacterById(id: id)
+            dataManager.getCharacterById(id: id, viewController: self)
         }
         
         startActivity()
@@ -81,5 +81,19 @@ extension DetailViewController:GetHeroDetailProtocol {
             self.nameLabel.text = hero.name
             self.stopActivity()
         }
+    }
+}
+extension DetailViewController {
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let handler: (UIAlertAction) -> Void = { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: handler))
+        
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
