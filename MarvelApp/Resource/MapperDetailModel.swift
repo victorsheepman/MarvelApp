@@ -21,7 +21,8 @@ struct MapperDetailModel {
         let categoryCell = createCategoryCell(hero: hero)
         var dataCell = [CellData]()
         for (category, list) in categoryCell {
-            let cellData = CellData(opened: false, title: category, sectionData: list)
+            let isOpen = list.isEmpty || list[0].isEmpty
+            let cellData = CellData(opened: isOpen, title: category, sectionData: list)
             dataCell.append(cellData)
         }
         return dataCell
