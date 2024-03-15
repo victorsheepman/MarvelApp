@@ -45,10 +45,16 @@ struct MapperDetailModel {
          }
 
         if !hero.events.isEmpty {
-            let eventsNames = hero.events.map { $0.name }
+            
+            var eventsNames = hero.events.map { $0.name }
+            
+            if eventsNames.count == 1{
+                eventsNames.append(hero.events[0].name)
+            }
+            
             categoryData["Events"] = eventsNames
         }else{
-            categoryData["Events"] = ["No Events"]
+            categoryData["Events"] = ["","No Events"]
          }
 
         if !hero.stories.isEmpty {

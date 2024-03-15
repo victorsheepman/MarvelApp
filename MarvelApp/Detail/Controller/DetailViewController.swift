@@ -140,7 +140,8 @@ extension DetailViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableViewData[section].opened == true {
-            return tableViewData[section].sectionData.count
+            print(tableViewData[section].sectionData.count)
+            return tableViewData[section].sectionData.count 
         }else {
             return 1
         }
@@ -160,7 +161,7 @@ extension DetailViewController: UITableViewDataSource{
             return cell
         }else{
             guard let cell =  tableView.dequeueReusableCell(withIdentifier: "Cell") else {return UITableViewCell()}
-           
+            print("indexpath row:\(indexPath.row)")
             listContent.text = tableViewData[indexPath.section].sectionData[indexPath.row]
             cell.contentConfiguration = listContent
             
