@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
+    private let mapper = MapperHomeModel()
     private var characters = [HomeModel]()
     private var filteredCharacter = [HomeModel]()
     let dataManager = ExternalDataManager()
@@ -64,8 +65,8 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController:ExternalDataProtocol {
-    func getHeroList(list: [HomeModel]) {
-        characters = list
+    func getHeroList(list: [Character]) {
+        characters = mapper.map(entity: list)
         
         DispatchQueue.main.async {
             self.homeCollectionView.reloadData()

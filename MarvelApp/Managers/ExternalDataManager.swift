@@ -10,7 +10,7 @@ import CryptoKit
 import UIKit
 
 protocol ExternalDataProtocol {
-    func getHeroList(list:[HomeModel])
+    func getHeroList(list:[Character])
 }
 
 protocol GetHeroDetailProtocol {
@@ -45,8 +45,8 @@ class ExternalDataManager {
             do{
                 let characters = try self.decoder.decode(APIResult.self, from:APIData)
                 
-                let result =  self.mapperHome.map(entity: characters.data.results)
-                self.delegate.getHeroList(list: result)
+               // let result =  self.mapperHome.map(entity: characters.data.results)
+                self.delegate.getHeroList(list: characters.data.results)
             }catch {
                 print("Hubo un error")
             }
