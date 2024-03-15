@@ -21,8 +21,9 @@ class DetailViewController: UIViewController {
     
     var heroId:Int?
     private let dataManager = ExternalDataManager()
+    private let mapper = MapperDetailModel()
     var tableViewData = [CellModel]()
-    var mapper = MapperDetailModel()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,16 +95,16 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController:GetHeroDetailProtocol {
-    func getHeroDetail(hero: DetailModel) {
-       
+    func getHeroDetail(hero: [Result]) {
+        let heroDetail = mapper.mapToDetail(entity: hero)
         DispatchQueue.main.async {
             
-            self.decodeImage(backdropPath: hero.backdropPath)
-            self.tableViewData = self.mapper.mapToTableViewData(hero: hero)
-            self.nameLabel.text = hero.name
+            self.decodeImage(backdropPath: heroDetail.backdropPath)
+            self.tableViewData = self.mapper.mapToTableViewData(hero: heroDetail)
+            self.nameLabel.text = heroDetail.name
             
             if !hero.description.isEmpty {
-                self.descriptionLabel.text = hero.description
+                self.descriptionLabel.text = heroDetail.description
             }else{
                 self.descriptionLabel.text = "No description" 
             }
@@ -164,7 +165,6 @@ extension DetailViewController: UITableViewDataSource{
     }
 }
 
-// TODO: arreglar error de las celdas
 
 extension DetailViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

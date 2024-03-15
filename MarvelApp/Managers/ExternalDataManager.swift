@@ -14,7 +14,7 @@ protocol ExternalDataProtocol {
 }
 
 protocol GetHeroDetailProtocol {
-    func getHeroDetail(hero: DetailModel)
+    func getHeroDetail(hero: [Result])
 }
 
 class ExternalDataManager {
@@ -69,8 +69,8 @@ class ExternalDataManager {
             do{
                 let result = try self.decoder.decode(CharacterDetail.self, from:data)
                 
-                let characterDetail = self.mapperDetail.mapToDetail(entity: result.data.results)
-                self.heroDetailDelegate.getHeroDetail(hero: characterDetail)
+               // let characterDetail = self.mapperDetail.mapToDetail(entity: result.data.results)
+                self.heroDetailDelegate.getHeroDetail(hero: result.data.results)
             }catch let error{
                 print("call error\(error)")
                 DispatchQueue.main.async {
