@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MapperHomeViewModel {
+struct MapperHomeModel {
     func map(entity:[Character])->[HomeModel] {
         return entity.map { HomeModel(name: $0.name, backdropPath: getImgUrl(thumbnail: $0.thumbnail), id: $0.id) }
     }
