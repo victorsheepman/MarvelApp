@@ -10,8 +10,8 @@ import Alamofire
 import AlamofireImage
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var tabBar: UITabBar!
-    @IBOutlet weak var textField: UITextField! {
+    @IBOutlet weak private var tabBar: UITabBar!
+    @IBOutlet weak private var textField: UITextField! {
         didSet {
             guard let image = UIImage(named: "search-filled") else { return }
             textField.tintColor = UIColor.lightGray
@@ -19,13 +19,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var homeCollectionView: UICollectionView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak private var homeCollectionView: UICollectionView!
+    @IBOutlet weak private var activity: UIActivityIndicatorView!
     
     private let mapper = MapperHomeModel()
     private var characters = [HomeModel]()
     private var filteredCharacter = [HomeModel]()
-    let dataManager = ExternalDataManager()
+    private let dataManager = ExternalDataManager()
     private var detailCoordinator: DetailCoordinator?
     
     

@@ -22,8 +22,6 @@ class ExternalDataManager {
     var delegate:ExternalDataProtocol!
     var heroDetailDelegate:GetHeroDetailProtocol!
     
-    private let mapperHome = MapperHomeModel()
-    private let mapperDetail = MapperDetailModel()
     private let ts = String(Date().timeIntervalSince1970)
     private let session = URLSession(configuration: .default)
     private let decoder = JSONDecoder()
@@ -45,7 +43,6 @@ class ExternalDataManager {
             do{
                 let characters = try self.decoder.decode(APIResult.self, from:APIData)
                 
-               // let result =  self.mapperHome.map(entity: characters.data.results)
                 self.delegate.getHeroList(list: characters.data.results)
             }catch {
                 print("Hubo un error")
@@ -69,7 +66,6 @@ class ExternalDataManager {
             do{
                 let result = try self.decoder.decode(CharacterDetail.self, from:data)
                 
-               // let characterDetail = self.mapperDetail.mapToDetail(entity: result.data.results)
                 self.heroDetailDelegate.getHeroDetail(hero: result.data.results)
             }catch let error{
                 print("call error\(error)")

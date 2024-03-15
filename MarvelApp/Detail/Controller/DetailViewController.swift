@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     var heroId:Int?
     private let dataManager = ExternalDataManager()
     private let mapper = MapperDetailModel()
-    var tableViewData = [CellModel]()
+    private var tableViewData = [CellModel]()
    
     
     override func viewDidLoad() {

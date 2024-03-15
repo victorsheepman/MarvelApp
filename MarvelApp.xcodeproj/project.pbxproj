@@ -168,7 +168,6 @@
 		847B4A112B4EE47C005394E4 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
-				8411C29C2BA48BFF0091F419 /* Model */,
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
 				847B4A162B4EE47C005394E4 /* ViewController.swift */,
@@ -178,6 +177,7 @@
 				8494D1602B9115310000CEDF /* Resource */,
 				8416BEB82B8FAB63000862D4 /* Managers */,
 				8470926B2B63F91B0017CB60 /* Coordinstors */,
+				8411C29C2BA48BFF0091F419 /* Model */,
 				847B4A1B2B4EE47D005394E4 /* Assets.xcassets */,
 				847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */,
 				847B4A202B4EE47D005394E4 /* Info.plist */,
