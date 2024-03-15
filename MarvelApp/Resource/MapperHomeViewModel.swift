@@ -8,8 +8,8 @@
 import Foundation
 
 struct MapperHomeViewModel {
-    func map(entity:[Character])->[HomeViewModel] {
-        return entity.map { HomeViewModel(name: $0.name, backdropPath: getImgUrl(thumbnail: $0.thumbnail), id: $0.id) }
+    func map(entity:[Character])->[HomeModel] {
+        return entity.map { HomeModel(name: $0.name, backdropPath: getImgUrl(thumbnail: $0.thumbnail), id: $0.id) }
     }
     
     private func getImgUrl(thumbnail:[String: String])->String?{

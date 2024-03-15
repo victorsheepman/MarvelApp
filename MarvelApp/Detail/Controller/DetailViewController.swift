@@ -10,11 +10,6 @@ import Alamofire
 import AlamofireImage
 
 
-struct CellData{
-    var opened = Bool()
-    var title = String()
-    var sectionData = [String]()
-}
 
 class DetailViewController: UIViewController {
     
@@ -26,7 +21,7 @@ class DetailViewController: UIViewController {
     
     var heroId:Int?
     private let dataManager = ExternalDataManager()
-    var tableViewData = [CellData]()
+    var tableViewData = [CellModel]()
     var mapper = MapperDetailModel()
     
     override func viewDidLoad() {

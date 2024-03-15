@@ -10,7 +10,7 @@ import CryptoKit
 import UIKit
 
 protocol ExternalDataProtocol {
-    func getHeroList(list:[HomeViewModel])
+    func getHeroList(list:[HomeModel])
 }
 
 protocol GetHeroDetailProtocol {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeViewModel {
+struct HomeModel {
     let name: String
     let backdropPath: String?
     let id: Int

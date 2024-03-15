@@ -17,3 +17,9 @@ struct DetailModel {
     let comics:        [ComicsItem]
     
 }
+
+struct CellModel{
+    var opened = Bool()
+    var title = String()
+    var sectionData = [String]()
+}

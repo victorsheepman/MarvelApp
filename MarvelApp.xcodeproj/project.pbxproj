@@ -80,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8411C29C2BA48BFF0091F419 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8424A1AB2BA217D700EF60AC /* CharacterDetail.swift */,
+				84B072702B87C81500AE6B4F /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8416BEB82B8FAB63000862D4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +135,6 @@
 		8424A1A82BA1F22500EF60AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8424A1AB2BA217D700EF60AC /* CharacterDetail.swift */,
 				84A928C42BA33FB40082D5AC /* DetailModel.swift */,
 			);
 			path = Model;
@@ -160,6 +168,7 @@
 		847B4A112B4EE47C005394E4 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				8411C29C2BA48BFF0091F419 /* Model */,
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
 				847B4A162B4EE47C005394E4 /* ViewController.swift */,
@@ -191,7 +200,6 @@
 		84B0726F2B87C7FD00AE6B4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84B072702B87C81500AE6B4F /* Character.swift */,
 				8416BEBB2B8FAC32000862D4 /* HomeModel.swift */,
 			);
 			path = Model;

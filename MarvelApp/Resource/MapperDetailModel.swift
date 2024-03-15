@@ -17,12 +17,12 @@ struct MapperDetailModel {
         return urlImg
     }
 
-    func mapToTableViewData(hero:DetailModel)->[CellData]{
+    func mapToTableViewData(hero:DetailModel)->[CellModel]{
         let categoryCell = createCategoryCell(hero: hero)
-        var dataCell = [CellData]()
+        var dataCell = [CellModel]()
         for (category, list) in categoryCell {
             let isOpen = list.isEmpty || list[0].isEmpty
-            let cellData = CellData(opened: isOpen, title: category, sectionData: list)
+            let cellData = CellModel(opened: isOpen, title: category, sectionData: list)
             dataCell.append(cellData)
         }
         return dataCell
