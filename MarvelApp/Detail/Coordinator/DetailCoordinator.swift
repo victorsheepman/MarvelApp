@@ -27,6 +27,7 @@ class DetailCoordinator:DeteilCoordinatorProtocol {
         let detailView = DetailViewController(nibName: "DetailViewController", bundle: nil)
         detailView.heroId = id
         self.viewController?.navigationController?.navigationBar.isHidden = false
+        self.viewController?.navigationController?.navigationBar.tintColor = .red
         self.viewController?.navigationController?.pushViewController(detailView, animated: true)
         
     }
