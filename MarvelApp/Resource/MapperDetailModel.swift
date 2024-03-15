@@ -30,42 +30,39 @@ struct MapperDetailModel {
     private func createCategoryCell(hero: DetailModel) -> [String: [String]] {
         var categoryData: [String: [String]] = [:]
 
-        if !hero.comics.isEmpty {
-            let comicsNames = hero.comics.map { $0.name }
-            categoryData["Comics"] = comicsNames
-        }else{
-            categoryData["Comics"] = ["No Comics"]
-         }
+        // Creamos un diccionario que mapea el nombre de cada categoría con su respectiva lista de nombres
+        let categories: [String: [Any]] = [
+            "Comics": hero.comics,
+            "Series": hero.series,
+            "Events": hero.events,
+            "Stories": hero.stories
+        ]
 
-        if !hero.series.isEmpty {
-            let seriesNames = hero.series.map { $0.name }
-            categoryData["Series"] = seriesNames
-        }else{
-            categoryData["Series"] = ["No Series"]
-         }
-
-        if !hero.events.isEmpty {
-            
-            var eventsNames = hero.events.map { $0.name }
-            
-            if eventsNames.count == 1{
-                eventsNames.append(hero.events[0].name)
+        // Recorremos el diccionario de categorías y transformamos los objetos a sus nombres
+        for (categoryName, categoryItems) in categories {
+            // Mapeamos los objetos a sus nombres o a un string indicando que no hay elementos
+            let itemNames: [String]
+            if let comicsItems = categoryItems as? [ComicsItem] {
+                itemNames = comicsItems.map { $0.name }
+            } else if let storiesItems = categoryItems as? [StoriesItem] {
+                itemNames = storiesItems.map { $0.name }
+            } else {
+                itemNames = []
             }
-            
-            categoryData["Events"] = eventsNames
-        }else{
-            categoryData["Events"] = ["","No Events"]
-         }
+            let categoryValues = itemNames.isEmpty ? ["", "No \(categoryName)"] : itemNames
 
-        if !hero.stories.isEmpty {
-            let storiesNames = hero.stories.map { $0.name }
-            categoryData["Stories"] = storiesNames
-        }else{
-            categoryData["Stories"] = ["No Stories"]
-         }
+            categoryData[categoryName] = categoryValues
+            
+            // Si hay un solo elemento en la lista, lo agregamos nuevamente para mantener la coherencia
+            if categoryValues.count == 1 {
+                categoryData[categoryName]?.append(categoryValues[0])
+            }
+        }
 
         return categoryData
     }
+
+
 
 }
    

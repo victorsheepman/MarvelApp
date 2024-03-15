@@ -140,7 +140,6 @@ extension DetailViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableViewData[section].opened == true {
-            print(tableViewData[section].sectionData.count)
             return tableViewData[section].sectionData.count 
         }else {
             return 1
