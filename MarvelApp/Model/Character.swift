@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct APIResult:Codable {
-    var data: APICharacterData
+struct ResultDTO:Codable {
+    var data: CharacterDataDTO
 }
 
-struct APICharacterData:Codable {
+struct CharacterDataDTO: Codable {
     var count: Int
-    var results: [Character]
+    var results: [CharacterDTO]
 }
 
-struct Character: Identifiable, Codable {
+struct CharacterDTO: Identifiable, Codable {
     var id:Int
     var name:String
     var description:String

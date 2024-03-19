@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController:ExternalDataProtocol {
-    func getHeroList(list: [Character]) {
+    func getHeroList(list: [CharacterDTO]) {
         characters = mapper.map(entity: list)
         
         DispatchQueue.main.async {
