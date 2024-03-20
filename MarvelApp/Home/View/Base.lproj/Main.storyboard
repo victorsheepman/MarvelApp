@@ -107,6 +107,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system">
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToSetting:" destination="d2Z-cW-Cgk" eventType="touchUpInside" id="JwQ-zy-rGj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lz7-6c-dI1"/>

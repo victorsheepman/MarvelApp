@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     private var filteredCharacter = [HomeModel]()
     private let dataManager = ExternalDataManager()
     private var detailCoordinator: DetailCoordinator?
+    private var settingCoordinator: SettingCoordinator?
     
     
     override func viewDidLoad() {
@@ -59,6 +60,10 @@ class HomeViewController: UIViewController {
     }
     
    
+    @IBAction func goToSetting(_ sender: Any) {
+        settingCoordinator = SettingCoordinator(viewController: self)
+        settingCoordinator?.start()
+    }
     
 
 }
