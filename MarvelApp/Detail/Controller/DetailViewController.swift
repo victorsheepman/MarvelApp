@@ -117,7 +117,7 @@ extension DetailViewController:GetHeroDetailProtocol {
             self.tableViewData = self.mapper.mapToTableViewData(hero: heroDetail)
             self.nameLabel.text = heroDetail.name
             
-            if !hero.description.isEmpty {
+            if !heroDetail.description.isEmpty  {
                 self.descriptionLabel.text = heroDetail.description
             }else{
                 self.descriptionLabel.text = "No description" 
