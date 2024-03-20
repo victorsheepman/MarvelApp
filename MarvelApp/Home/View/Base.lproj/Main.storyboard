@@ -136,23 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6Z-ru-pdZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3037" y="-34"/>
-        </scene>
-        <!--Favoritos-->
-        <scene sceneID="C25-7R-I5o">
-            <objects>
-                <viewController id="KeV-sf-6ev" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WVp-E7-7mJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="7Wc-pc-Rr0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="star.fill" catalog="system" id="UoW-j0-rCc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5uz-qm-SWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1839" y="731"/>
+            <point key="canvasLocation" x="3053" y="-25"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OqX-Is-3s2">
@@ -171,12 +155,104 @@
                     </tabBar>
                     <connections>
                         <segue destination="d2Z-cW-Cgk" kind="relationship" relationship="viewControllers" id="dmh-pc-mCL"/>
-                        <segue destination="KeV-sf-6ev" kind="relationship" relationship="viewControllers" id="HLw-Mk-Br5"/>
+                        <segue destination="enl-Dm-ZVr" kind="relationship" relationship="viewControllers" id="xDK-w4-vof"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynj-2X-qwW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1840" y="-35"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="t4d-iZ-yxB">
+            <objects>
+                <viewController storyboardIdentifier="favoriteView" id="enl-Dm-ZVr" customClass="FavoriteViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f23-p4-sSI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-2K-Ew8">
+                                <rect key="frame" x="16" y="157" width="361" height="620"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BMB-el-Yeg">
+                                    <size key="itemSize" width="158" height="220"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="WUa-3s-yUI">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="620"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" systemColor="systemRedColor"/>
+                                </activityIndicatorView>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="Item" id="yu8-1k-CDR" customClass="HomeCollectionViewCell" customModule="MarvelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vo2-k4-C5r">
+                                            <rect key="frame" x="0.0" y="0.0" width="158" height="220"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgV-V7-bBt">
+                                                    <rect key="frame" x="25" y="155.66666666666663" width="133" height="50.333333333333343"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="9Ui-9c-p4G"/>
+                                                        <constraint firstAttribute="height" constant="50.329999999999998" id="eHz-Gc-1mw"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="nU3-4x-BGA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="CgV-V7-bBt" secondAttribute="bottom" constant="14" id="LNh-2h-xdy"/>
+                                                <constraint firstAttribute="trailing" secondItem="CgV-V7-bBt" secondAttribute="trailing" id="YWe-j6-DTb"/>
+                                                <constraint firstItem="CgV-V7-bBt" firstAttribute="leading" secondItem="Vo2-k4-C5r" secondAttribute="leading" constant="25" id="oOb-Ou-f0W"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <size key="customSize" width="158" height="220"/>
+                                        <connections>
+                                            <outlet property="labelView" destination="CgV-V7-bBt" id="cTW-lM-smy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si3-p6-Eid">
+                                <rect key="frame" x="154.33333333333334" y="60" width="83.666666666666657" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rty-R2-d9Q">
+                                <rect key="frame" x="326" y="49" width="51" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system">
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToSetting:" destination="enl-Dm-ZVr" eventType="touchUpInside" id="hNo-mq-4fI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uON-bA-1fc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7FG-2K-Ew8" firstAttribute="bottom" secondItem="uON-bA-1fc" secondAttribute="bottom" constant="8" id="L2A-7k-b9A"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="star.fill" catalog="system" id="fBa-0t-asz"/>
+                    <navigationItem key="navigationItem" id="GvY-fA-ai5"/>
+                    <connections>
+                        <outlet property="activityView" destination="WUa-3s-yUI" id="qfG-ff-tlM"/>
+                        <outlet property="favoriteCollectionView" destination="7FG-2K-Ew8" id="Tjz-uq-Iu3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15Q-dy-vyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="747"/>
         </scene>
     </scenes>
     <resources>
@@ -187,10 +263,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
