@@ -14,6 +14,7 @@ class SettingCoordinator: CoordinatorProtocol {
     
     init(viewController: UIViewController) {
         self.viewController = viewController
+        
     }
     
     func start() {

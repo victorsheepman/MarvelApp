@@ -22,8 +22,8 @@ class UserDefaultManager: NSObject {
         }
     }
     
-    func getValue()->Bool? {
-        let value = UserDefaults.standard.value(forKey:"kIsDarkMode")as? Bool
+    func getValue()->Bool {
+        let value = UserDefaults.standard.value(forKey:"kIsDarkMode")as! Bool
         return value
     }
 }
