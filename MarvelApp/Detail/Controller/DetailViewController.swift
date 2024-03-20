@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     private let dataManager = ExternalDataManager()
     private let mapper = MapperDetailModel()
     private var tableViewData = [CellModel]()
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,13 @@ class DetailViewController: UIViewController {
         configureLabel()
         startActivity()
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let myButton = UIBarButtonItem(title: "Options", style: .plain, target: self, action: #selector(myButtonTapped))
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = .red
+        self.navigationItem.rightBarButtonItem = myButton
     }
     
     private func configureLabel(){
@@ -89,6 +96,12 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
+    @objc func myButtonTapped() {
+        // Aquí colocas el código que deseas ejecutar cuando el botón es tocado
+        print("¡El botón ha sido tocado!")
+    }
+
     
 
 

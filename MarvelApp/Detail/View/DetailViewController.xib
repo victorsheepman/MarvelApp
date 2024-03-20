@@ -41,7 +41,7 @@
                     </connections>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNV-vT-fti">
-                    <rect key="frame" x="16" y="337" width="360" height="37"/>
+                    <rect key="frame" x="16.000000000000004" y="337" width="41.333333333333343" height="37"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -58,13 +58,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqT-Gs-fmB">
-                    <rect key="frame" x="314" y="59" width="84" height="35"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Options">
-                        <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                    </buttonConfiguration>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,10 +70,8 @@
                 <constraint firstItem="gNV-vT-fti" firstAttribute="top" secondItem="F9x-3t-SyV" secondAttribute="bottom" constant="20" id="PDo-Jn-8mc"/>
                 <constraint firstItem="F9x-3t-SyV" firstAttribute="trailing" secondItem="nXO-yT-r3T" secondAttribute="trailing" id="Pga-xc-w98"/>
                 <constraint firstItem="gNV-vT-fti" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="QsH-0U-R23"/>
-                <constraint firstItem="F9x-3t-SyV" firstAttribute="top" secondItem="tqT-Gs-fmB" secondAttribute="bottom" id="ThO-Jl-eTV"/>
                 <constraint firstAttribute="bottom" secondItem="nXO-yT-r3T" secondAttribute="bottom" constant="16" id="Z2c-09-rXx"/>
                 <constraint firstItem="F9x-3t-SyV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dNB-Q0-7m6"/>
-                <constraint firstItem="tqT-Gs-fmB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="314" id="dhe-wQ-bfp"/>
                 <constraint firstItem="F9x-3t-SyV" firstAttribute="leading" secondItem="nXO-yT-r3T" secondAttribute="leading" id="f2F-uU-f0x"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
@@ -89,9 +80,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
