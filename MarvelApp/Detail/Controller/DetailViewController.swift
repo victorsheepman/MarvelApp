@@ -13,6 +13,7 @@ import AlamofireImage
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
@@ -103,6 +104,16 @@ class DetailViewController: UIViewController {
         settingCoordinator?.start()
     }
 
+    @IBAction func clickLike(_ sender: Any) {
+        if btnLike.tag == 0 {
+            btnLike.setImage(UIImage(systemName: "heart"), for: .normal)
+            btnLike.tag = 1
+        }else{
+            btnLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            btnLike.tag = 0
+            
+        }
+    }
     
 
 
