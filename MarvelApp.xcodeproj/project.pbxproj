@@ -27,6 +27,7 @@
 		847B4A1F2B4EE47D005394E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */; };
 		848C40302BAB37A20073591B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C402F2BAB37A20073591B /* UserDefaultManager.swift */; };
 		848C40322BAB4F3D0073591B /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C40312BAB4F3D0073591B /* FavoriteViewController.swift */; };
+		848C40382BAB7BA20073591B /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C40372BAB7BA20073591B /* FavoriteCollectionViewCell.swift */; };
 		84936E332BAB16A0003D3A9D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84936E312BAB16A0003D3A9D /* SettingViewController.swift */; };
 		84936E342BAB16A0003D3A9D /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84936E322BAB16A0003D3A9D /* SettingViewController.xib */; };
 		84936E382BAB1AC4003D3A9D /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84936E372BAB1AC4003D3A9D /* SettingCoordinator.swift */; };
@@ -63,6 +64,7 @@
 		847B4A202B4EE47D005394E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848C402F2BAB37A20073591B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		848C40312BAB4F3D0073591B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		848C40372BAB7BA20073591B /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		84936E312BAB16A0003D3A9D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		84936E322BAB16A0003D3A9D /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		84936E372BAB1AC4003D3A9D /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				848C40312BAB4F3D0073591B /* FavoriteViewController.swift */,
+				848C40372BAB7BA20073591B /* FavoriteCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848C40382BAB7BA20073591B /* FavoriteCollectionViewCell.swift in Sources */,
 				847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */,
 				84936E382BAB1AC4003D3A9D /* SettingCoordinator.swift in Sources */,
 				84936E332BAB16A0003D3A9D /* SettingViewController.swift in Sources */,
