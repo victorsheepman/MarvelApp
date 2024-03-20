@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     
     var heroId:Int?
     private let dataManager = ExternalDataManager()
+    private var settingCoordinator: SettingCoordinator?
     private let mapper = MapperDetailModel()
     private var tableViewData = [CellModel]()
     
@@ -39,7 +40,7 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let myButton = UIBarButtonItem(title: "Options", style: .plain, target: self, action: #selector(myButtonTapped))
+        let myButton = UIBarButtonItem(title: "Options", style: .plain, target: self, action: #selector(goToSetting))
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.tintColor = .red
         self.navigationItem.rightBarButtonItem = myButton
@@ -97,9 +98,9 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @objc func myButtonTapped() {
-        // Aquí colocas el código que deseas ejecutar cuando el botón es tocado
-        print("¡El botón ha sido tocado!")
+    @objc func goToSetting() {
+        settingCoordinator = SettingCoordinator(viewController: self)
+        settingCoordinator?.start()
     }
 
     
