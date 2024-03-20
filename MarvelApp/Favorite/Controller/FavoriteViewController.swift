@@ -25,6 +25,7 @@ class FavoriteViewController: UIViewController {
     private let userDefaultManager = UserDefaultManager()
     private let dataManager = ExternalDataManager()
     private let mapper = MapperHomeModel()
+    private var detailCoordinator: DetailCoordinator?
     
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
     override func viewDidLoad() {
@@ -88,8 +89,8 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //detailCoordinator = DetailCoordinator(viewController: self)
-        //detailCoordinator?.start(id: self.filteredCharacter[indexPath.row].id)
+        detailCoordinator = DetailCoordinator(viewController: self)
+        detailCoordinator?.start(id: self.favorites[indexPath.row].id)
     }
 }
 
