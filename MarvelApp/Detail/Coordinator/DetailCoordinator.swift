@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 protocol DeteilCoordinatorProtocol {
     var viewController: UIViewController? { get }
-  
-    
     func start(id: Int)
 }
 
