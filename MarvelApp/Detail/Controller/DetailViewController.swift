@@ -24,7 +24,9 @@ class DetailViewController: UIViewController {
     private let dataManager = ExternalDataManager()
     private var settingCoordinator: SettingCoordinator?
     private let mapper = MapperDetailModel()
+    private let userDefaultManager = UserDefaultManager()
     private var tableViewData = [CellModel]()
+    
     
     
     override func viewDidLoad() {
@@ -107,9 +109,14 @@ class DetailViewController: UIViewController {
     @IBAction func clickLike(_ sender: Any) {
         if btnLike.tag == 0 {
             btnLike.setImage(UIImage(systemName: "heart"), for: .normal)
+            
             btnLike.tag = 1
         }else{
             btnLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            if let id =  heroId{
+                userDefaultManager.setFavorite(newFavorite: id)
+            }
+            
             btnLike.tag = 0
             
         }

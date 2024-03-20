@@ -14,6 +14,7 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
     
     private var settingCoordinator: SettingCoordinator?
+    private let userDefaultManager = UserDefaultManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class FavoriteViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        print(userDefaultManager.getFavorites())
+        
     }
     
 

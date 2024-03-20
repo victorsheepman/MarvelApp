@@ -9,8 +9,8 @@ import Foundation
 class UserDefaultManager: NSObject {
     class func initValues(){
         let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "KSavedValue") == false{
-            let defaultValues:[String:Bool] = (["kIsDarkMode":false, "KSavedValue":true])
+        if defaults.bool(forKey: "kSavedValue") == false{
+            let defaultValues:[String:Any] = (["kIsDarkMode":false, "kSavedValue":true, "kFavoriteList":[Int]()])
             defaults.register(defaults: defaultValues)
         }
     }
@@ -25,5 +25,18 @@ class UserDefaultManager: NSObject {
     func getValue()->Bool {
         let value = UserDefaults.standard.value(forKey:"kIsDarkMode")as! Bool
         return value
+    }
+    
+    func setFavorite(newFavorite:Int){
+        var list: [Int] = UserDefaults.standard.value(forKey:"kFavoriteList") as! [Int]
+        if !list.contains(newFavorite){
+            list.append(newFavorite)
+            UserDefaults.standard.set(list, forKey: "kFavoriteList")
+        }
+    }
+    
+    func getFavorites()->[Int]{
+        let list: [Int] = UserDefaults.standard.value(forKey:"kFavoriteList") as! [Int]
+        return list
     }
 }
