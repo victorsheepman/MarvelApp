@@ -23,7 +23,23 @@ class SettingViewController: UIViewController {
 
     @IBAction func showDarkMode(_ sender: UISwitch) {
         userDefaultManager.setValue(newValue: sender.isOn)
+        configureDarkMode()
     }
     
+    
+    private func configureDarkMode(){
+        if #available(iOS 13.0, *){
+            let appDelegate = UIApplication.shared.windows.first
+            let isDarkMode = userDefaultManager.getValue()
+            
+            if isDarkMode {
+                appDelegate?.overrideUserInterfaceStyle = .dark
+                return
+            }
+                
+            appDelegate?.overrideUserInterfaceStyle = .light
+            return
+        }
+    }
     
 }
