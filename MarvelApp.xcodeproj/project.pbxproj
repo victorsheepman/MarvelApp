@@ -25,6 +25,7 @@
 		847B4A1A2B4EE47C005394E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B4A182B4EE47C005394E4 /* Main.storyboard */; };
 		847B4A1C2B4EE47D005394E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847B4A1B2B4EE47D005394E4 /* Assets.xcassets */; };
 		847B4A1F2B4EE47D005394E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */; };
+		848C40302BAB37A20073591B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C402F2BAB37A20073591B /* UserDefaultManager.swift */; };
 		84936E332BAB16A0003D3A9D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84936E312BAB16A0003D3A9D /* SettingViewController.swift */; };
 		84936E342BAB16A0003D3A9D /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84936E322BAB16A0003D3A9D /* SettingViewController.xib */; };
 		84936E382BAB1AC4003D3A9D /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84936E372BAB1AC4003D3A9D /* SettingCoordinator.swift */; };
@@ -59,6 +60,7 @@
 		847B4A1B2B4EE47D005394E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847B4A1E2B4EE47D005394E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847B4A202B4EE47D005394E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848C402F2BAB37A20073591B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		84936E312BAB16A0003D3A9D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		84936E322BAB16A0003D3A9D /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		84936E372BAB1AC4003D3A9D /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				84B0726B2B87C46B00AE6B4F /* ExternalDataManager.swift */,
+				848C402F2BAB37A20073591B /* UserDefaultManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				847B4A132B4EE47C005394E4 /* AppDelegate.swift in Sources */,
 				84B0726E2B87C4EA00AE6B4F /* Constanst.swift in Sources */,
 				8494D1622B91153D0000CEDF /* Extensions.swift in Sources */,
+				848C40302BAB37A20073591B /* UserDefaultManager.swift in Sources */,
 				84B0726A2B87BF1B00AE6B4F /* HomeViewController.swift in Sources */,
 				84A928C52BA33FB40082D5AC /* DetailModel.swift in Sources */,
 				8470926D2B63F9530017CB60 /* CoordinatorProtocol.swift in Sources */,
