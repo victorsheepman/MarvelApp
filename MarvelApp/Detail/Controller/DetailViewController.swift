@@ -39,6 +39,7 @@ class DetailViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         configureLabel()
         startActivity()
+        configureButtonLike()
        
     }
     
@@ -47,16 +48,28 @@ class DetailViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.tintColor = .red
         self.navigationItem.rightBarButtonItem = myButton
+       
+
     }
     
     private func configureLabel(){
         nameLabel.text = ""
         nameLabel.frame.size = CGSize(width: 200, height: 100)
-        
         nameLabel.lineBreakMode = .byWordWrapping
         nameLabel.numberOfLines = 0
     }
     
+    private func configureButtonLike(){
+        let favoriteList = userDefaultManager.getFavorites()
+        guard let id = heroId else { return }
+        if favoriteList.contains(id) {
+            btnLike.tag = 1
+            btnLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }else{
+            btnLike.tag = 0
+            btnLike.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
     
     
     
@@ -108,17 +121,20 @@ class DetailViewController: UIViewController {
 
     @IBAction func clickLike(_ sender: Any) {
         if btnLike.tag == 0 {
+           
             btnLike.setImage(UIImage(systemName: "heart"), for: .normal)
-            
             btnLike.tag = 1
-        }else{
-            btnLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            if let id =  heroId{
-                userDefaultManager.setFavorite(newFavorite: id)
-            }
             
+            guard let id =  heroId else {return }
+            userDefaultManager.removeFavoriteItem(newFavorite: id)
+        }else{
+            
+            btnLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             btnLike.tag = 0
             
+            guard let id =  heroId else {return }
+            userDefaultManager.setFavorite(newFavorite: id)
+
         }
     }
     

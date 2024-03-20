@@ -39,4 +39,12 @@ class UserDefaultManager: NSObject {
         let list: [Int] = UserDefaults.standard.value(forKey:"kFavoriteList") as! [Int]
         return list
     }
+    func removeFavoriteItem(newFavorite:Int){
+        
+        var list: [Int] = UserDefaults.standard.value(forKey:"kFavoriteList") as! [Int]
+        guard let index = list.firstIndex(of: newFavorite) else { return  }
+        list.remove(at: index)
+        UserDefaults.standard.set(list, forKey: "kFavoriteList")
+        
+    }
 }
