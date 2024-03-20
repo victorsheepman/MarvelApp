@@ -25,6 +25,8 @@
 		847B4A1A2B4EE47C005394E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B4A182B4EE47C005394E4 /* Main.storyboard */; };
 		847B4A1C2B4EE47D005394E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847B4A1B2B4EE47D005394E4 /* Assets.xcassets */; };
 		847B4A1F2B4EE47D005394E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847B4A1D2B4EE47D005394E4 /* LaunchScreen.storyboard */; };
+		84936E332BAB16A0003D3A9D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84936E312BAB16A0003D3A9D /* SettingViewController.swift */; };
+		84936E342BAB16A0003D3A9D /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84936E322BAB16A0003D3A9D /* SettingViewController.xib */; };
 		8494D1622B91153D0000CEDF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494D1612B91153D0000CEDF /* Extensions.swift */; };
 		84A928C52BA33FB40082D5AC /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A928C42BA33FB40082D5AC /* DetailModel.swift */; };
 		84A928C72BA3433E0082D5AC /* MapperDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A928C62BA3433E0082D5AC /* MapperDetailModel.swift */; };
@@ -56,6 +58,8 @@
 		847B4A1B2B4EE47D005394E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847B4A1E2B4EE47D005394E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847B4A202B4EE47D005394E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84936E312BAB16A0003D3A9D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		84936E322BAB16A0003D3A9D /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		8494D1612B91153D0000CEDF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		84A928C42BA33FB40082D5AC /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		84A928C62BA3433E0082D5AC /* MapperDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperDetailModel.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		847B4A112B4EE47C005394E4 /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				84936E2D2BAB1654003D3A9D /* Setting */,
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
 				847B4A162B4EE47C005394E4 /* ViewController.swift */,
@@ -184,6 +189,31 @@
 				84AE25EA2B9B4ED800D2320D /* README.md */,
 			);
 			path = MarvelApp;
+			sourceTree = "<group>";
+		};
+		84936E2D2BAB1654003D3A9D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				84936E352BAB16A6003D3A9D /* Controller */,
+				84936E2E2BAB165B003D3A9D /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		84936E2E2BAB165B003D3A9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84936E322BAB16A0003D3A9D /* SettingViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84936E352BAB16A6003D3A9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84936E312BAB16A0003D3A9D /* SettingViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		8494D1602B9115310000CEDF /* Resource */ = {
@@ -332,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B4A1F2B4EE47D005394E4 /* LaunchScreen.storyboard in Resources */,
+				84936E342BAB16A0003D3A9D /* SettingViewController.xib in Resources */,
 				847092742B64000D0017CB60 /* PageView.xib in Resources */,
 				8424A1A32BA1EBB900EF60AC /* DetailViewController.xib in Resources */,
 				847B4A1C2B4EE47D005394E4 /* Assets.xcassets in Resources */,
@@ -347,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847B4A172B4EE47C005394E4 /* ViewController.swift in Sources */,
+				84936E332BAB16A0003D3A9D /* SettingViewController.swift in Sources */,
 				8424A1A22BA1EBB900EF60AC /* DetailViewController.swift in Sources */,
 				84FF160F2B728DF40096FD9C /* HomeCoordinator.swift in Sources */,
 				84A928C72BA3433E0082D5AC /* MapperDetailModel.swift in Sources */,
