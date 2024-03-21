@@ -26,6 +26,7 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 
 ![Imagenes MarvelApp](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/home.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2hvbWUucG5nIiwiaWF0IjoxNzExMDMxMDM1LCJleHAiOjE3NDI1NjcwMzV9.MlkUNODyjH15vRwb5EhQdp0e5RyF9b-ODQ1-bxWxqCY&t=2024-03-21T14%3A23%3A26.505Z)
 
+![Home Dark](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/home-dark.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2hvbWUtZGFyay5wbmciLCJpYXQiOjE3MTEwMzEwODcsImV4cCI6MTc0MjU2NzA4N30.ERl1Rb-WSvFLaUbvkNRa4BeDJ1mewJ_wB_hY95R_82Q&t=2024-03-21T14%3A24%3A18.034Z)
 ## Tecnologías y detalles del desarrollo
 
 - iOS
