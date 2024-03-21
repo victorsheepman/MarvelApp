@@ -23,6 +23,7 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 
 ## Imagenes MarvelApp
 
+![View](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/view.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL3ZpZXcucG5nIiwiaWF0IjoxNzExMDMyNjI1LCJleHAiOjE3NDI1Njg2MjV9.Gu56LEG5_h8QcHIe3NMaHV2b843_zK5A5wzdZpCDfAM&t=2024-03-21T14%3A49%3A55.764Z)
 
 ![Home](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/h.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2gucG5nIiwiaWF0IjoxNzExMDMyNTEzLCJleHAiOjE3NDI1Njg1MTN9.51-Iqv5agVOVsCyg7h2BfCPE56jZcJ5VrIq2A4YbelM&t=2024-03-21T14%3A48%3A04.094Z)
 
