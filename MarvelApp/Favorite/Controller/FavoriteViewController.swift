@@ -13,11 +13,12 @@ class FavoriteViewController: UIViewController {
     
 
     var characters = [HomeModel]()
+    var ids = [Int]()
     
     private var favorites: [HomeModel] {
-        let list = userDefaultManager.getFavorites()
+      //  let list = userDefaultManager.getFavorites()
         return characters.filter { character in
-            return list.contains(character.id)
+            return ids.contains(character.id)
         }
     }
     
@@ -40,9 +41,8 @@ class FavoriteViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
-        print(userDefaultManager.getFavorites())
-        
-    
+        ids = userDefaultManager.getFavorites()
+        favoriteCollectionView.reloadData()
     }
     
     private func startActivity(){
