@@ -27,13 +27,19 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func deleteFavorites(_ sender: Any) {
-        showAlert(title: "Advertencia", message: "Desea eliminar todos sus heroes favoritos?")
+        if !userDefaultManager.getFavorites().isEmpty{
+            showAlert(title: "Advertencia", message: "Desea eliminar todos sus heroes favoritos?")
+        }else {
+            self.showModal(title: "Error", message: "No tiene heroes favoritos para eliminar")
+        }
+        
     }
     
     private func showAlert(title: String, message: String) {
         
         let yesHandler: (UIAlertAction) -> Void = { _ in
             self.userDefaultManager.removeFavorites()
+            self.showModal(title: "Heroes favoritos eliminados", message: "")
         }
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -47,6 +53,14 @@ class SettingViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
+    func showModal(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
     private func configureDarkMode(){
         if #available(iOS 13.0, *){
