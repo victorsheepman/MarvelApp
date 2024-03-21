@@ -8,11 +8,20 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 
 ## Funcionalidades del proyecto
 
-- **Funcionalidad 1:** Pantalla de Bienvenida
-- **Funcionalidad 2:** Listado de héroes
-- **Funcionalidad 3:** Pantalla de carga
-- **Funcionalidad 4:** Pantalla detalle del personaje
-- **Funcionalidad 5:** Busqueda de personaje
+- **Funcionalidad 1:**  Pantalla de Bienvenida
+- **Funcionalidad 2:**  Lista de héroes
+- **Funcionalidad 3:**  componente de carga
+- **Funcionalidad 4:**  Pantalla detalle del heroe
+- **Funcionalidad 5:**  Busqueda de heroe
+- **Funcionalidad 6:**  Pantalla de configuracion
+- **Funcionalidad 7:**  Lista de heroes favoritos
+- **Funcionalidad 8:**  Agregar heroes a listado de heroes favoritos
+- **Funcionalidad 8:**  Modo oscuro
+- **Funcionalidad 9:**  Borrar listado de heroes favoritos
+- **Funcionalidad 10:** Persistencia de datos
+- **Funcionalidad 11:** Tab para navegacion de listado
+
+
 
 ![Imagenes MarvelApp](https://ruta/a/las/imagenes)
 
@@ -24,6 +33,8 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 - MVC 
 - Alamofire
 - AlamofireImage
+- UserDefaults
+- Coordiantors
 
 
 
