@@ -35,12 +35,18 @@ class FavoriteViewController: UIViewController {
         dataManager.delegate = self
         dataManager.fetchApi()
         favoriteCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+        startActivity()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         print(userDefaultManager.getFavorites())
+        
     
+    }
+    
+    private func startActivity(){
+        activityView.startAnimating()
     }
     
     private func stopActivity(){
