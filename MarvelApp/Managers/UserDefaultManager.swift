@@ -47,4 +47,10 @@ class UserDefaultManager: NSObject {
         UserDefaults.standard.set(list, forKey: "kFavoriteList")
         
     }
+    
+    func removeFavorites(){
+        let list = UserDefaults.standard.value(forKey:"kFavoriteList") as! [Int]
+        guard !list.isEmpty else {return }
+        UserDefaults.standard.set([Int](), forKey: "kFavoriteList")
+    }
 }

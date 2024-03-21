@@ -26,6 +26,9 @@ class SettingViewController: UIViewController {
         configureDarkMode()
     }
     
+    @IBAction func deleteFavorites(_ sender: Any) {
+        userDefaultManager.removeFavorites()
+    }
     
     private func configureDarkMode(){
         if #available(iOS 13.0, *){
