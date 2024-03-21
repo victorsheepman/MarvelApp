@@ -27,8 +27,26 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func deleteFavorites(_ sender: Any) {
-        userDefaultManager.removeFavorites()
+        showAlert(title: "Advertencia", message: "Desea eliminar todos sus heroes favoritos?")
     }
+    
+    private func showAlert(title: String, message: String) {
+        
+        let yesHandler: (UIAlertAction) -> Void = { _ in
+            self.userDefaultManager.removeFavorites()
+        }
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Sí", style: .default, handler: yesHandler)
+        let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+
     
     private func configureDarkMode(){
         if #available(iOS 13.0, *){
