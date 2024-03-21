@@ -30,6 +30,7 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 
 ![Favorites](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/favoritos.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2Zhdm9yaXRvcy5wbmciLCJpYXQiOjE3MTEwMzExNTQsImV4cCI6MTc0MjU2NzE1NH0.Xejktck_GOk3ED1pBkwh-YGwUKVG0sNdhHnwjWiCNhU&t=2024-03-21T14%3A25%3A25.724Z)
 
+![Favorites Dark](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/favorites-dark.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2Zhdm9yaXRlcy1kYXJrLnBuZyIsImlhdCI6MTcxMTAzMTIxNywiZXhwIjoxNzQyNTY3MjE3fQ.27gG1XfGomBwKhfj9Tth1Kb_LeYsA7JM2b7FoVJ4UHU&t=2024-03-21T14%3A26%3A28.332Z)
 
 ## Tecnologías y detalles del desarrollo
 
