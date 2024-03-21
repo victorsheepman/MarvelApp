@@ -27,20 +27,25 @@ class FavoriteViewController: UIViewController {
     private let mapper = MapperHomeModel()
     private var detailCoordinator: DetailCoordinator?
     
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
         dataManager.fetchApi()
         favoriteCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         print(userDefaultManager.getFavorites())
-        
+    
+    }
+    
+    private func stopActivity(){
+        activityView.stopAnimating()
+        activityView.isHidden = true
     }
     
 
@@ -59,7 +64,7 @@ extension FavoriteViewController:ExternalDataProtocol {
         
         DispatchQueue.main.async {
             self.favoriteCollectionView.reloadData()
-                //  self.stopActivity()
+            self.stopActivity()
         }
     }
 }
