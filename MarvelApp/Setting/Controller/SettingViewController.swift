@@ -28,9 +28,9 @@ class SettingViewController: UIViewController {
     
     @IBAction func deleteFavorites(_ sender: Any) {
         if !userDefaultManager.getFavorites().isEmpty{
-            showAlert(title: "Advertencia", message: "Desea eliminar todos sus heroes favoritos?")
+            showAlert(title: "Warning", message: "Do you want to delete all your favorite heroes?")
         }else {
-            showModal(title: "Error", message: "No tiene heroes favoritos para eliminar")
+            showModal(title: "Error", message: "There are no favorite heroes to eliminate")
         }
         
     }
@@ -39,12 +39,12 @@ class SettingViewController: UIViewController {
         
         let yesHandler: (UIAlertAction) -> Void = { _ in
             self.userDefaultManager.removeFavorites()
-            self.showModal(title: "Heroes favoritos eliminados", message: "")
+            self.showModal(title: "Favorite heroes eliminated", message: "")
         }
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let yesAction = UIAlertAction(title: "Sí", style: .default, handler: yesHandler)
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: yesHandler)
         let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
         
         alertController.addAction(yesAction)
