@@ -10,8 +10,8 @@ import Alamofire
 import AlamofireImage
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var tabBar: UITabBar!
-    @IBOutlet weak var textField: UITextField! {
+    @IBOutlet weak private var tabBar: UITabBar!
+    @IBOutlet weak private var textField: UITextField! {
         didSet {
             guard let image = UIImage(named: "search-filled") else { return }
             textField.tintColor = UIColor.lightGray
@@ -19,12 +19,15 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var homeCollectionView: UICollectionView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak private var homeCollectionView: UICollectionView!
+    @IBOutlet weak private var activity: UIActivityIndicatorView!
     
-    private var characters = [HomeViewModel]()
-    private var filteredCharacter = [HomeViewModel]()
-    let dataManager = ExternalDataManager()
+    private let mapper = MapperHomeModel()
+    private var characters = [HomeModel]()
+    private var filteredCharacter = [HomeModel]()
+    private let dataManager = ExternalDataManager()
+    private var detailCoordinator: DetailCoordinator?
+    private var settingCoordinator: SettingCoordinator?
     
     
     override func viewDidLoad() {
@@ -33,8 +36,11 @@ class HomeViewController: UIViewController {
         dataManager.fetchApi()
         homeCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         startActivity()
+        
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     private func startActivity(){
         activity.startAnimating()
     }
@@ -54,14 +60,18 @@ class HomeViewController: UIViewController {
     }
     
    
+    @IBAction func goToSetting(_ sender: Any) {
+        settingCoordinator = SettingCoordinator(viewController: self)
+        settingCoordinator?.start()
+    }
     
 
 }
 
 
 extension HomeViewController:ExternalDataProtocol {
-    func getHeroList(list: [HomeViewModel]) {
-        characters = list
+    func getHeroList(list: [CharacterDTO]) {
+        characters = mapper.map(entity: list)
         
         DispatchQueue.main.async {
             self.homeCollectionView.reloadData()
@@ -70,7 +80,7 @@ extension HomeViewController:ExternalDataProtocol {
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let searchText = textField.text, !searchText.isEmpty {
             return filteredCharacter.count
@@ -98,6 +108,11 @@ extension HomeViewController: UICollectionViewDataSource {
         
         return item
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        detailCoordinator = DetailCoordinator(viewController: self)
+        detailCoordinator?.start(id: self.filteredCharacter[indexPath.row].id)
+    }
 }
 
 
@@ -116,7 +131,7 @@ extension HomeViewController: UITextFieldDelegate {
         if let value = textField.text {
             self.filteredCharacter =  self.characters.filter({ character in
                 self.reloadTableView()
-                return character.name.contains(value)
+                return character.name.lowercased().contains(value.lowercased())
             })
             
         }

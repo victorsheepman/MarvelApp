@@ -21,8 +21,6 @@ class HomeCoordinator: CoordinatorProtocol {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: .main)
         let homeView = storyBoard.instantiateViewController(withIdentifier: "tab")
-        
-        self.viewController?.navigationController?.navigationBar.isHidden  = true
         self.viewController?.navigationController?.pushViewController(homeView, animated: false)
         
     }

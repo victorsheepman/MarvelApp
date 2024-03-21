@@ -7,22 +7,31 @@
 
 import Foundation
 import CryptoKit
+import UIKit
 
 protocol ExternalDataProtocol {
-    func getHeroList(list:[HomeViewModel])
+    func getHeroList(list:[CharacterDTO])
+}
+
+protocol GetHeroDetailProtocol {
+    func getHeroDetail(hero: [Result])
 }
 
 class ExternalDataManager {
-    var delegate:ExternalDataProtocol!
-    private let mapper = MapperHomeViewModel()
     
+    var delegate:ExternalDataProtocol!
+    var heroDetailDelegate:GetHeroDetailProtocol!
+    
+    private let ts = String(Date().timeIntervalSince1970)
+    private let session = URLSession(configuration: .default)
+    private let decoder = JSONDecoder()
+ 
     func fetchApi(){
-        let ts = String(Date().timeIntervalSince1970)
         let hash = getHash(data: "\(ts)\(Constants.Keys.privateKey)\(Constants.Keys.publicKey)")
         let url = "https://gateway.marvel.com:443/v1/public/characters?ts=\(ts)&apikey=\(Constants.Keys.publicKey)&hash=\(hash)&limit=100&offset=0"
         
-        let session = URLSession(configuration: .default)
-        
+      
+
         session.dataTask(with: URL(string:url)!) { data, _, err in
             if let error = err{
                 print(error.localizedDescription)
@@ -32,13 +41,43 @@ class ExternalDataManager {
             guard let APIData = data else { return }
             
             do{
-                let characters = try JSONDecoder().decode(APIResult.self, from:APIData)
-                let result =  self.mapper.map(entity: characters.data.results)
-                self.delegate.getHeroList(list: result)
+                let characters = try self.decoder.decode(ResultDTO.self, from:APIData)
+                
+                self.delegate.getHeroList(list: characters.data.results)
             }catch {
                 print("Hubo un error")
             }
         }.resume()
+    }
+    
+    func getCharacterById(id:Int, viewController: DetailViewController){
+        let hash = getHash(data: "\(ts)\(Constants.Keys.privateKey)\(Constants.Keys.publicKey)")
+        let url = "https://gateway.marvel.com:443/v1/public/characters/\(id)?ts=\(ts)&apikey=\(Constants.Keys.publicKey)&hash=\(hash)&format=comic&formatType=comic&limit=30"
+        
+        session.dataTask(with: URL(string: url)!) { data, _, err in
+            
+            if let error = err {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let data = data else {return}
+            
+            do{
+                let result = try self.decoder.decode(CharacterDetail.self, from:data)
+                
+                self.heroDetailDelegate.getHeroDetail(hero: result.data.results)
+            }catch let error{
+                print("call error\(error)")
+                DispatchQueue.main.async {
+                    viewController.showAlert(title: "Error", message: "Hubo un error en la llamada")
+
+                }
+            }
+        }.resume()
+        
+        
+        
     }
     
     private func getHash(data: String)->String{
