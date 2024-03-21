@@ -38,6 +38,8 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 
 ![Setting](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/setting.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL3NldHRpbmcucG5nIiwiaWF0IjoxNzExMDMxODE4LCJleHAiOjE3NDI1Njc4MTh9.Y9qircNplqfq8GfQlj0x3-ChIi5aC6OVUNs415b5-i0&t=2024-03-21T14%3A36%3A29.641Z)
 
+![Setting Dark](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/setting-dark.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL3NldHRpbmctZGFyay5wbmciLCJpYXQiOjE3MTEwMzE4NjQsImV4cCI6MTc0MjU2Nzg2NH0.lfMlDn4KmaNQicl-NYHtBzuVxSTtfj-lb7tW2EivFIs&t=2024-03-21T14%3A37%3A14.713Z)
+
 
 
 ## Tecnologías y detalles del desarrollo
