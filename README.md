@@ -34,7 +34,7 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 
 ![Detail](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/detail.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2RldGFpbC5wbmciLCJpYXQiOjE3MTEwMzE2MTksImV4cCI6MTc0MjU2NzYxOX0.a7TiJZk3qce_9hAWnsTeMSj_GOpTx3nSlWmQFbA4VO8&t=2024-03-21T14%3A33%3A10.692Z)
 
-![Detail Dark](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/detail.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2RldGFpbC5wbmciLCJpYXQiOjE3MTEwMzE2MTksImV4cCI6MTc0MjU2NzYxOX0.a7TiJZk3qce_9hAWnsTeMSj_GOpTx3nSlWmQFbA4VO8&t=2024-03-21T14%3A33%3A10.692Z)
+![Detail Dark](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/detail-dark.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2RldGFpbC1kYXJrLnBuZyIsImlhdCI6MTcxMTAzMTc0NSwiZXhwIjoxNzQyNTY3NzQ1fQ.FKxWGnUFCkG5JvGg8dfodeq-FEgzxaN0yD5yJPJgQK0&t=2024-03-21T14%3A35%3A16.458Z)
 
 ## Tecnologías y detalles del desarrollo
 
