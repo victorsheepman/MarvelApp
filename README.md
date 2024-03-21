@@ -26,7 +26,7 @@ Proyecto en desarrollo para llevar a la práctica conocimientos de UIKit y MVC.
 
 ![Home](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/h.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2gucG5nIiwiaWF0IjoxNzExMDMyNTEzLCJleHAiOjE3NDI1Njg1MTN9.51-Iqv5agVOVsCyg7h2BfCPE56jZcJ5VrIq2A4YbelM&t=2024-03-21T14%3A48%3A04.094Z)
 
-![Home Dark](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/home-dark.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2hvbWUtZGFyay5wbmciLCJpYXQiOjE3MTEwMzEwODcsImV4cCI6MTc0MjU2NzA4N30.ERl1Rb-WSvFLaUbvkNRa4BeDJ1mewJ_wB_hY95R_82Q&t=2024-03-21T14%3A24%3A18.034Z)
+![Home Dark](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/hd.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2hkLnBuZyIsImlhdCI6MTcxMTAzMjU1MCwiZXhwIjoxNzQyNTY4NTUwfQ.tXM31WG_4XgxJfGSZJSK8R3_tRgQZ46bNTenL99ScXI&t=2024-03-21T14%3A48%3A41.052Z)
 
 ![Favorites](https://sqrevjfizglmjxxfuvxy.supabase.co/storage/v1/object/sign/Talhua/marvel/favoritos.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUYWxodWEvbWFydmVsL2Zhdm9yaXRvcy5wbmciLCJpYXQiOjE3MTEwMzExNTQsImV4cCI6MTc0MjU2NzE1NH0.Xejktck_GOk3ED1pBkwh-YGwUKVG0sNdhHnwjWiCNhU&t=2024-03-21T14%3A25%3A25.724Z)
 
