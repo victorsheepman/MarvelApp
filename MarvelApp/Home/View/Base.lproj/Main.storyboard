@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
         </scene>
-        <!--Personajes-->
+        <!--Characters-->
         <scene sceneID="TiW-9X-f1u">
             <objects>
                 <viewController storyboardIdentifier="homeView" id="d2Z-cW-Cgk" customClass="HomeViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                             <constraint firstItem="zAC-U7-LG7" firstAttribute="bottom" secondItem="Lz7-6c-dI1" secondAttribute="bottom" constant="8" id="k7G-R6-b4t"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Personajes" image="person.fill" catalog="system" id="uUv-En-Eek"/>
+                    <tabBarItem key="tabBarItem" title="Characters" image="person.fill" catalog="system" id="uUv-En-Eek"/>
                     <navigationItem key="navigationItem" id="zSd-Qr-5ED"/>
                     <connections>
                         <outlet property="activity" destination="epk-c1-PxF" id="QqW-GH-Fbb"/>
