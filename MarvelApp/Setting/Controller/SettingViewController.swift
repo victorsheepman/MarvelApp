@@ -30,7 +30,7 @@ class SettingViewController: UIViewController {
         if !userDefaultManager.getFavorites().isEmpty{
             showAlert(title: "Advertencia", message: "Desea eliminar todos sus heroes favoritos?")
         }else {
-            self.showModal(title: "Error", message: "No tiene heroes favoritos para eliminar")
+            showModal(title: "Error", message: "No tiene heroes favoritos para eliminar")
         }
         
     }
