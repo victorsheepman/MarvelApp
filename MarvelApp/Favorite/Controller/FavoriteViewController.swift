@@ -16,7 +16,6 @@ class FavoriteViewController: UIViewController {
     var ids = [Int]()
     
     private var favorites: [HomeModel] {
-      //  let list = userDefaultManager.getFavorites()
         return characters.filter { character in
             return ids.contains(character.id)
         }
