@@ -13,7 +13,7 @@
 import Foundation
 
 // MARK: - CharacterDetail
-struct CharacterDetail: Codable {
+struct CharacterDetailModel: Codable {
     let code: Int
     let attributionHTML: String
     let data: DataClass

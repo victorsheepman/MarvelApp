@@ -64,7 +64,7 @@ class FavoriteViewController: UIViewController {
 
 
 extension FavoriteViewController:ApiDataSource  {
-    func getHeroList(list: [CharacterDTO]) {
+    func getHeroList(list: [CharacterModel]) {
         characters = mapper.map(entity: list)
         
         DispatchQueue.main.async {

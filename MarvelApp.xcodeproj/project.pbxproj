@@ -10,6 +10,9 @@
 		8416BEBA2B8FAB94000862D4 /* MapperHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BEB92B8FAB94000862D4 /* MapperHomeViewModel.swift */; };
 		8416BEBC2B8FAC32000862D4 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BEBB2B8FAC32000862D4 /* HomeModel.swift */; };
 		8416BEC92B8FCBD9000862D4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8416BEC82B8FCBD9000862D4 /* AlamofireImage */; };
+		84221CEC2BC9930900759A15 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84221CEB2BC9930900759A15 /* ResultModel.swift */; };
+		84221CEE2BC9932100759A15 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84221CED2BC9932100759A15 /* DataModel.swift */; };
+		84221CF02BC993D900759A15 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84221CEF2BC993D900759A15 /* CellModel.swift */; };
 		8424A1A22BA1EBB900EF60AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A1A02BA1EBB900EF60AC /* DetailViewController.swift */; };
 		8424A1A32BA1EBB900EF60AC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8424A1A12BA1EBB900EF60AC /* DetailViewController.xib */; };
 		8424A1A72BA1EC3600EF60AC /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		8416BEB92B8FAB94000862D4 /* MapperHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperHomeViewModel.swift; sourceTree = "<group>"; };
 		8416BEBB2B8FAC32000862D4 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		84221CEB2BC9930900759A15 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		84221CED2BC9932100759A15 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		84221CEF2BC993D900759A15 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		8424A1A02BA1EBB900EF60AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8424A1A12BA1EBB900EF60AC /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8424A1A62BA1EC3600EF60AC /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 			children = (
 				8424A1AB2BA217D700EF60AC /* CharacterDetail.swift */,
 				84B072702B87C81500AE6B4F /* Character.swift */,
+				84221CEB2BC9930900759A15 /* ResultModel.swift */,
+				84221CED2BC9932100759A15 /* DataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				84A928C42BA33FB40082D5AC /* DetailModel.swift */,
+				84221CEF2BC993D900759A15 /* CellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -424,6 +433,8 @@
 				847092762B6407920017CB60 /* PageViewController.swift in Sources */,
 				84B072712B87C81500AE6B4F /* Character.swift in Sources */,
 				847092732B64000D0017CB60 /* PageView.swift in Sources */,
+				84221CEC2BC9930900759A15 /* ResultModel.swift in Sources */,
+				84221CF02BC993D900759A15 /* CellModel.swift in Sources */,
 				84B072732B87DE1000AE6B4F /* HomeCollectionViewCell.swift in Sources */,
 				8416BEBA2B8FAB94000862D4 /* MapperHomeViewModel.swift in Sources */,
 				84B0726C2B87C46B00AE6B4F /* ApiManager.swift in Sources */,
@@ -433,6 +444,7 @@
 				847B4A132B4EE47C005394E4 /* AppDelegate.swift in Sources */,
 				84B0726E2B87C4EA00AE6B4F /* Constanst.swift in Sources */,
 				8494D1622B91153D0000CEDF /* Extensions.swift in Sources */,
+				84221CEE2BC9932100759A15 /* DataModel.swift in Sources */,
 				848C40302BAB37A20073591B /* UserDefaultManager.swift in Sources */,
 				84B0726A2B87BF1B00AE6B4F /* HomeViewController.swift in Sources */,
 				84A928C52BA33FB40082D5AC /* DetailModel.swift in Sources */,

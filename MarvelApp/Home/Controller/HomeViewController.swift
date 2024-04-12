@@ -70,7 +70,7 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController:ApiDataSource {
-    func getHeroList(list: [CharacterDTO]) {
+    func getHeroList(list: [CharacterModel]) {
         characters = mapper.map(entity: list)
         
         DispatchQueue.main.async {

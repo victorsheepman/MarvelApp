@@ -18,8 +18,3 @@ struct DetailModel {
     
 }
 
-struct CellModel{
-    var opened = Bool()
-    var title = String()
-    var sectionData = [String]()
-}

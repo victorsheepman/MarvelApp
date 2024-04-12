@@ -7,16 +7,9 @@
 
 import Foundation
 
-struct ResultDTO:Codable {
-    var data: CharacterDataDTO
-}
 
-struct CharacterDataDTO: Codable {
-    var count: Int
-    var results: [CharacterDTO]
-}
 
-struct CharacterDTO: Identifiable, Codable {
+struct CharacterModel: Identifiable, Codable {
     var id:Int
     var name:String
     var description:String

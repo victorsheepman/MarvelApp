@@ -8,7 +8,7 @@
 import Foundation
 
 struct MapperHomeModel {
-    func map(entity:[CharacterDTO])->[HomeModel] {
+    func map(entity:[CharacterModel])->[HomeModel] {
         return entity.map { HomeModel(name: $0.name, backdropPath: getImgUrl(thumbnail: $0.thumbnail), id: $0.id) }
     }
     

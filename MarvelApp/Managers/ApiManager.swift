@@ -10,7 +10,7 @@ import CryptoKit
 import UIKit
 
 protocol ApiDataSource{
-    func getHeroList(list:[CharacterDTO])
+    func getHeroList(list:[CharacterModel])
 }
 
 protocol GetHeroDetailProtocol {
@@ -41,7 +41,7 @@ class ApiManager {
             guard let APIData = data else { return }
             
             do{
-                let characters = try self.decoder.decode(ResultDTO.self, from:APIData)
+                let characters = try self.decoder.decode(ResultModel.self, from:APIData)
                 
                 self.delegate.getHeroList(list: characters.data.results)
             }catch {
@@ -64,7 +64,7 @@ class ApiManager {
             guard let data = data else {return}
             
             do{
-                let result = try self.decoder.decode(CharacterDetail.self, from:data)
+                let result = try self.decoder.decode(CharacterDetailModel.self, from:data)
                 
                 self.heroDetailDelegate.getHeroDetail(hero: result.data.results)
             }catch let error{
