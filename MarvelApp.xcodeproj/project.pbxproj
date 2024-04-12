@@ -118,6 +118,18 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		84221CF22BC9999700759A15 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				84D70AC42B925EB0008B7813 /* PageView */,
+				84D70AC72B925F3A008B7813 /* Home */,
+				8424A19C2BA1EB5100EF60AC /* Detail */,
+				84936E2D2BAB1654003D3A9D /* Setting */,
+				848C40332BAB4F7D0073591B /* Favorite */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		8424A19C2BA1EB5100EF60AC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,11 +205,7 @@
 				847B4A122B4EE47C005394E4 /* AppDelegate.swift */,
 				847B4A142B4EE47C005394E4 /* SceneDelegate.swift */,
 				847B4A162B4EE47C005394E4 /* ViewController.swift */,
-				848C40332BAB4F7D0073591B /* Favorite */,
-				84936E2D2BAB1654003D3A9D /* Setting */,
-				8424A19C2BA1EB5100EF60AC /* Detail */,
-				84D70AC72B925F3A008B7813 /* Home */,
-				84D70AC42B925EB0008B7813 /* PageView */,
+				84221CF22BC9999700759A15 /* Modules */,
 				8494D1602B9115310000CEDF /* Resource */,
 				8416BEB82B8FAB63000862D4 /* Managers */,
 				8470926B2B63F91B0017CB60 /* Coordinstors */,
