@@ -23,7 +23,7 @@ class FavoriteViewController: UIViewController {
     
     private var settingCoordinator: SettingCoordinator?
     private let userDefaultManager = UserDefaultManager()
-    private let dataManager = ExternalDataManager()
+    private let dataManager = ApiManager()
     private let mapper = MapperHomeModel()
     private var detailCoordinator: DetailCoordinator?
     
@@ -63,7 +63,7 @@ class FavoriteViewController: UIViewController {
 }
 
 
-extension FavoriteViewController:ExternalDataProtocol {
+extension FavoriteViewController:ApiDataSource  {
     func getHeroList(list: [CharacterDTO]) {
         characters = mapper.map(entity: list)
         

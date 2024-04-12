@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var heroId:Int?
-    private let dataManager = ExternalDataManager()
+    private let dataManager = ApiManager()
     private var settingCoordinator: SettingCoordinator?
     private let mapper = MapperDetailModel()
     private let userDefaultManager = UserDefaultManager()

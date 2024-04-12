@@ -9,7 +9,7 @@ import Foundation
 import CryptoKit
 import UIKit
 
-protocol ExternalDataProtocol {
+protocol ApiDataSource{
     func getHeroList(list:[CharacterDTO])
 }
 
@@ -17,9 +17,9 @@ protocol GetHeroDetailProtocol {
     func getHeroDetail(hero: [Result])
 }
 
-class ExternalDataManager {
+class ApiManager {
     
-    var delegate:ExternalDataProtocol!
+    var delegate:ApiDataSource!
     var heroDetailDelegate:GetHeroDetailProtocol!
     
     private let ts = String(Date().timeIntervalSince1970)

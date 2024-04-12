@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     private let mapper = MapperHomeModel()
     private var characters = [HomeModel]()
     private var filteredCharacter = [HomeModel]()
-    private let dataManager = ExternalDataManager()
+    private let dataManager = ApiManager()
     private var detailCoordinator: DetailCoordinator?
     private var settingCoordinator: SettingCoordinator?
     
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController:ExternalDataProtocol {
+extension HomeViewController:ApiDataSource {
     func getHeroList(list: [CharacterDTO]) {
         characters = mapper.map(entity: list)
         
