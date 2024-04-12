@@ -16,7 +16,7 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Setting"
+        self.navigationItem.title = Constants.Setting.title
         darkModeSwitch.isOn = userDefaultManager.getValue()
     }
 
@@ -28,9 +28,9 @@ class SettingViewController: UIViewController {
     
     @IBAction func deleteFavorites(_ sender: Any) {
         if !userDefaultManager.getFavorites().isEmpty{
-            showAlert(title: "Warning", message: "Do you want to delete all your favorite heroes?")
+            showAlert(title: Constants.Setting.alertWarning.title, message: Constants.Setting.alertWarning.message)
         }else {
-            showModal(title: "Error", message: "There are no favorite heroes to eliminate")
+            showModal(title:Constants.Setting.alertError.title, message: Constants.Setting.alertError.message)
         }
         
     }
@@ -39,7 +39,7 @@ class SettingViewController: UIViewController {
         
         let yesHandler: (UIAlertAction) -> Void = { _ in
             self.userDefaultManager.removeFavorites()
-            self.showModal(title: "Favorite heroes eliminated", message: "")
+            self.showModal(title: Constants.Setting.titleModal, message: "")
         }
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

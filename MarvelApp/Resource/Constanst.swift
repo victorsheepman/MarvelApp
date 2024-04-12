@@ -36,5 +36,18 @@ struct Constants {
         static let TRAINING = "http://la URL que sea"
         static let PRODUCCION = "http://la URL que sea"
 }
+    
+    struct Setting {
+        static let title = "Setting"
+        static let titleModal = "Favorite heroes eliminated"
+        struct alertWarning {
+            static let message =  "Do you want to delete all your favorite heroes?"
+            static let title = "Warning"
+        }
+        struct alertError {
+            static let message =  "There are no favorite heroes to eliminate"
+            static let title = "Error"
+        }
+    }
 
 }
